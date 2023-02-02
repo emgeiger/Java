@@ -1,4 +1,4 @@
- 
+
 
 import java.awt.Component;
 import java.awt.Container;
@@ -68,7 +68,7 @@ public class Inventory extends JFrame implements ActionListener, LayoutManager
 //        jPanel.add(remove);
 //        remove.setVisible(false);
 
-        jPanel.add(jTextField);
+        // jPanel.add(jTextField);
         jPanel.add(jSpinner);
         jPanel.setLayout(new FlowLayout(FlowLayout.RIGHT));
 
@@ -132,7 +132,7 @@ public class Inventory extends JFrame implements ActionListener, LayoutManager
 
 //        for (Component comp : comps)
         {
-            
+
         }
 //        comps = new JButton(name);
 //        comps = new JPanel();
