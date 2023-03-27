@@ -27,8 +27,13 @@ public class Thermal extends JFrame
 
 //******************************************************************************************
 
-	public void createContents()
+	private void createContents()
 	{
+		double[] wellTemp = new double[] {30, 40, 50, 60, 70, 80, 90};
+		int[] wellTemps = new[] {30, 40, 50, 60, 70, 80, 90};
+		//wellsTemp, if needed, for another experiment, for testing
+		String temp = null;
+
 		setLayout(new BorderLayout());
 		JPanel northPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
 		JPanel westPanel = new JPanel(new GridLayout(0, 1));
@@ -37,8 +42,17 @@ public class Thermal extends JFrame
 
 		Label label = new Label("wellTemp");
 		northPanel.add(label);
-		label = new Label("degrees F color code: 30 40 50 60 70 80 90");
+		label = new Label("degrees F color code:");
 		northPanel.add(label);
+		for(int i = 0; i < wellTemp.length; i++)
+		{
+			temp = String.format("%d", (int)wellTemp[i]);
+			// temp = String.format("%d", wellTemps[i]);
+			// wellsTemp, for whatever it may need to be needed for.
+			label = new Label(temp);
+			label.setForeground(color(wellTemp[i]));
+			northPanel.add(label);
+		}
 
 		String[] shortMonths = new DateFormatSymbols().getShortMonths();
 		for (int j = 0; j < 12; j++)
@@ -65,7 +79,8 @@ public class Thermal extends JFrame
 
 	public double load()
 	{
-		double heatFlow, hour = 0;
+		double heatFlow;
+		double hour = 0;
 		heatFlow = -4000 - 28000 * Math.cos((2 * Math.PI) * hour / (360 * 24))
 		  + 8000 * Math.cos((2 * Math.PI) * hour / (10 * 24)) + 12000 * Math.sin((2 * Math.PI) * (hour - 10) /  24 );
 		  heatFlow += 0.04 * Math.abs(heatFlow);
@@ -117,7 +132,7 @@ public class Thermal extends JFrame
 //********************************************************************************************
 	public void display(double periodLength, int periodNumber, double avgPointTemp[])
 	{
-		System.out.println("time= " + (int) periodLength + "\t" + avgPointTemp[periodNumber]);
+		// System.out.println("time= " + (int) periodLength + "\t" + avgPointTemp[periodNumber]);
 	}
 //*************************************************************************************************
 	public void display(double periodNum, double avgPointTemp[])
@@ -130,9 +145,9 @@ public class Thermal extends JFrame
 		}
 	} // end display
 //************************************************************************
-	public void color()
+	private Color color(double degF)
 	{
-		double degF = 0;
+		// double degF = 0;
 		double red = (degF - 60) / 30;
 		double green = 1.0 - Math.abs(degF - 60) / 30;
 		double blue =  (90 - degF) / 30;
@@ -145,7 +160,8 @@ public class Thermal extends JFrame
 		{
 			red = 0.0;
 		}
-		else if (green > 1.0)
+		
+		if (green > 1.0)
 		{
 			green = 1.0;
 		}
@@ -153,7 +169,8 @@ public class Thermal extends JFrame
 		{
 			green = 0.0;
 		}
-		else if (blue > 1.0)
+		
+		if (blue > 1.0)
 		{
 			blue = 1.0;
 		}
@@ -162,8 +179,58 @@ public class Thermal extends JFrame
 			blue = 0.0;
 		}
 
-		Color color = new Color((int) red, (int) green, (int) blue);
+		// Color color = 
+		return new Color((int) red, (int) green, (int) blue);
 	} // end color
+//************************************************************************
+private Color color(int degF)
+{
+	// double degF = 0;
+	double red = (degF - 60) / 30;
+	double green = 1.0 - Math.abs(degF - 60) / 30;
+	double blue =  (90 - degF) / 30;
+
+	if (red > 1.0)
+	{
+		red = 1.0;
+	}
+	else if (red < 0.0)
+	{
+		red = 0.0;
+	}
+	
+	if (green > 1.0)
+	{
+		green = 1.0;
+	}
+	else if (green < 0.0)
+	{
+		green = 0.0;
+	}
+	
+	if (blue > 1.0)
+	{
+		blue = 1.0;
+	}
+	else if  (blue < 0.0)
+	{
+		blue = 0.0;
+	}
+
+	// Color color = 
+	return new Color((int) red, (int) green, (int) blue);
+} // end color
+//*************************************************************************************************
+private void color(JLabel label, int degF) {
+    float red = (degF - 60f) / 30f;
+    float green = 1.0f - Math.abs(degF - 60f) / 30f;
+    float blue = (90f - degF) / 30f;
+    red = Math.min(1.0f, Math.max(0.0f, red));
+    green = Math.min(1.0f, Math.max(0.0f, green));
+    blue = Math.min(1.0f, Math.max(0.0f, blue));
+    Color color = new Color(red, green, blue);
+    label.setForeground(color);
+}
 //*************************************************************************************************
 	public static void main(String[] args)
 	{
@@ -172,11 +239,12 @@ public class Thermal extends JFrame
 		double computedTemperature = 0;
 		double time = 0;
 		double[] avgPointTemp = new double[pointTemp.length];// = new double[42];
-		for(int i=0; i < 60; i++)
+		for(int i=1; i <= 60; i++)
 		{
 			for (int l=0; l < 42; l++)
 			{
 //				avgPointTemp[l] = pointTemp[l] += pointTemp[l] / pointTemp.length;
+				// this.
 				avgPointTemp[l] = 0;
 			} // end for
 
@@ -187,6 +255,7 @@ public class Thermal extends JFrame
 				thermal.diffuse(computedTemperature);
 				for (int l=0; l < 42; l++)
 				{
+					// this.
 					avgPointTemp[l] += computedTemperature / 144;
 					thermal.display(time, l, avgPointTemp);
 				}
