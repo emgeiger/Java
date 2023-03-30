@@ -8,6 +8,7 @@ public class Buttons extends JFrame implements ActionListener
     private JButton blue;
     private JButton reset;
     private Color origColor;
+    private Point origLocale;
     private JPanel panel;
     
     public Buttons()
@@ -38,7 +39,7 @@ public class Buttons extends JFrame implements ActionListener
         reset.addActionListener(this);
 
         // panel.getLayout();
-        panel.setLayout(new FlowLayout(FlowLayout.LEFT));
+        // panel.setLayout(new FlowLayout(FlowLayout.LEFT));
 
         add(panel);
     }
@@ -48,6 +49,7 @@ public class Buttons extends JFrame implements ActionListener
         if (ae.getSource() == Left)
         {
             panel.setLayout(new FlowLayout(FlowLayout.LEADING));
+            panel.revalidate();
         }
         else if (ae.getSource() == blue)
         {
@@ -58,6 +60,7 @@ public class Buttons extends JFrame implements ActionListener
         {
             panel.setBackground(origColor);
             panel.setLayout(new FlowLayout(FlowLayout.CENTER));
+            panel.revalidate();
         }
     }
 
