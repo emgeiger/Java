@@ -1,7 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.text.*;
-import java.util.*;
+// import java.util.*;
 
 public class Thermal extends JFrame
 {
@@ -30,7 +30,7 @@ public class Thermal extends JFrame
 	private void createContents()
 	{
 		double[] wellTemp = new double[] {30, 40, 50, 60, 70, 80, 90};
-		int[] wellTemps = new[] {30, 40, 50, 60, 70, 80, 90};
+		// int[] wellTemps = new int[] {30, 40, 50, 60, 70, 80, 90};
 		//wellsTemp, if needed, for another experiment, for testing
 		String temp = null;
 
@@ -77,10 +77,32 @@ public class Thermal extends JFrame
 
 //********************************************************************************************
 
-	public double load()
+public double load()
+{
+	double heatFlow;
+	double hour = 0;
+	heatFlow = -4000 - 28000 * Math.cos((2 * Math.PI) * hour / (360 * 24))
+	  + 8000 * Math.cos((2 * Math.PI) * hour / (10 * 24)) + 12000 * Math.sin((2 * Math.PI) * (hour - 10) /  24 );
+	  heatFlow += 0.04 * Math.abs(heatFlow);
+	  heatFlow += -1000;
+
+	  if (heatFlow < -38000)
+	  {
+		  heatFlow = -38000;
+	  }
+
+	  heatFlow += 0.18 * Math.abs(heatFlow);
+	  heatFlow += 0.04 * Math.abs(heatFlow);
+
+	  return heatFlow;
+}
+
+//********************************************************************************************
+
+	public double load(double hour)
 	{
 		double heatFlow;
-		double hour = 0;
+//		double hour = 0;
 		heatFlow = -4000 - 28000 * Math.cos((2 * Math.PI) * hour / (360 * 24))
 		  + 8000 * Math.cos((2 * Math.PI) * hour / (10 * 24)) + 12000 * Math.sin((2 * Math.PI) * (hour - 10) /  24 );
 		  heatFlow += 0.04 * Math.abs(heatFlow);
@@ -98,7 +120,29 @@ public class Thermal extends JFrame
 	}
 
 //********************************************************************************************
+/*
+	public void load()
+{
+	double heatFlow;
+	double hour = 0;
+	heatFlow = -4000 - 28000 * Math.cos((2 * Math.PI) * hour / (360 * 24))
+	  + 8000 * Math.cos((2 * Math.PI) * hour / (10 * 24)) + 12000 * Math.sin((2 * Math.PI) * (hour - 10) /  24 );
+	  heatFlow += 0.04 * Math.abs(heatFlow);
+	  heatFlow += -1000;
 
+	  if (heatFlow < -38000)
+	  {
+		  heatFlow = -38000;
+	  }
+
+	  heatFlow += 0.18 * Math.abs(heatFlow);
+	  heatFlow += 0.04 * Math.abs(heatFlow);
+
+	  diffuse(heatFlow);
+}
+*/
+//********************************************************************************************
+/*
 	public double diffuse(double heatFlow)
 	{
 		double deltaT = 0;
@@ -116,23 +160,113 @@ public class Thermal extends JFrame
 		pointTemp[0] = pointTemp[1] + heatFlow /
 		  ((2 * Math.PI) * depth * conductivity * Math.log(1 + deltaX / wellRadius));
 
-		for (int j=1; j < 41 && j <= 40; j++)
+		for (int j=1; j < 40 && j <= 39; j++)
 		{
 			pointTemp[j] = pointTemp[j] + factor *
 			  ((1 - 0.5/j) * pointTemp[j-1]- 2.0 * pointTemp[j] +
 			  (1 + 0.5 /j) * pointTemp[j+1]);
 
+			  pointTemp[j] += factor *
+			  ((1 - 0.5/j) * pointTemp[j-1]- 2.0 * pointTemp[j] +
+			  (1 + 0.5 /j) * pointTemp[j+1]);
+*/
+/*
 			  if (j == pointTemp[39])
 			  {
 				  pointTemp[41] = pointTemp[40];
 			  }
+*/
+/*
 		}
+
+		pointTemp[41] = pointTemp[40];
+
 		return heatFlow;
 	} // end diffuse
+*/
 //********************************************************************************************
-	public void display(double periodLength, int periodNumber, double avgPointTemp[])
+
+	public double[] diffuse(double heatFlow)
 	{
-		// System.out.println("time= " + (int) periodLength + "\t" + avgPointTemp[periodNumber]);
+		double deltaT = 0;
+		double depth = 900.0;                 // feet
+		double conductivity = 0.83;           // BTU/Hr/ft/degF
+		double density = 140;                 // lb/cuft
+		double specificHeat = 0.19;           // BTU/lb/degF
+		double diffusion =
+		conductivity / (density * specificHeat);  // sqft/hour
+		double wellRadius = 0.25;                   // ft
+		double deltaX = 0.33;                       // ft
+		double factor = diffusion * deltaT / (deltaX * deltaX);
+
+		heatFlow = pointTemp[0];
+		pointTemp[0] = pointTemp[1] + heatFlow /
+		((2 * Math.PI) * depth * conductivity * Math.log(1 + deltaX / wellRadius));
+
+		for (int j=1; j < 40 && j <= 39; j++)
+		{
+			pointTemp[j] = pointTemp[j] + factor *
+			((1 - 0.5/j) * pointTemp[j-1]- 2.0 * pointTemp[j] +
+			(1 + 0.5 /j) * pointTemp[j+1]);
+
+			pointTemp[j] += factor *
+			((1 - 0.5/j) * pointTemp[j-1]- 2.0 * pointTemp[j] +
+			(1 + 0.5 /j) * pointTemp[j+1]);
+	/*
+			if (j == pointTemp[39])
+			{
+				pointTemp[41] = pointTemp[40];
+			}
+	*/
+
+		}
+
+		pointTemp[41] = pointTemp[40];
+
+		return pointTemp;
+	} // end diffuse
+
+//********************************************************************************************
+/*
+	public void diffuse(double heatFlow)
+	{
+		double deltaT = 0;
+		double depth = 900.0;                 // feet
+		double conductivity = 0.83;           // BTU/Hr/ft/degF
+		double density = 140;                 // lb/cuft
+		double specificHeat = 0.19;           // BTU/lb/degF
+		double diffusion =
+		  conductivity / (density * specificHeat);  // sqft/hour
+		double wellRadius = 0.25;                   // ft
+		double deltaX = 0.33;                       // ft
+		double factor = diffusion * deltaT / (deltaX * deltaX);
+
+		heatFlow = pointTemp[0];
+		pointTemp[0] = pointTemp[1] + heatFlow /
+		  ((2 * Math.PI) * depth * conductivity * Math.log(1 + deltaX / wellRadius));
+
+		for (int j=1; j < 40 && j <= 39; j++)
+		{
+			pointTemp[j] = pointTemp[j] + factor *
+			  ((1 - 0.5/j) * pointTemp[j-1]- 2.0 * pointTemp[j] +
+			  (1 + 0.5 /j) * pointTemp[j+1]);
+*/
+/*
+			  if (j == pointTemp[39])
+			  {
+				  pointTemp[41] = pointTemp[40];
+			  }
+*/
+/*
+		}
+
+		pointTemp[41] = pointTemp[40];
+	} // end diffuse
+*/
+//********************************************************************************************
+	public void display(double periodLength, int periodNumber, double[] avgPointTemp)
+	{
+		System.out.println("time= " + (int) periodLength + "\t" + avgPointTemp[periodNumber]);
 	}
 //*************************************************************************************************
 	public void display(double periodNum, double avgPointTemp[])
@@ -183,7 +317,7 @@ public class Thermal extends JFrame
 		return new Color((int) red, (int) green, (int) blue);
 	} // end color
 //************************************************************************
-private Color color(int degF)
+	private Color color(int degF)
 {
 	// double degF = 0;
 	double red = (degF - 60) / 30;
@@ -221,7 +355,8 @@ private Color color(int degF)
 	return new Color((int) red, (int) green, (int) blue);
 } // end color
 //*************************************************************************************************
-private void color(JLabel label, int degF) {
+	private void color(JLabel label, int degF)
+{
     float red = (degF - 60f) / 30f;
     float green = 1.0f - Math.abs(degF - 60f) / 30f;
     float blue = (90f - degF) / 30f;
@@ -235,32 +370,42 @@ private void color(JLabel label, int degF) {
 	public static void main(String[] args)
 	{
 		Thermal thermal = new Thermal();
+		
 		double heatFlow = 0;
-		double computedTemperature = 0;
+		// double computedTemperature = 0;
 		double time = 0;
 		double[] avgPointTemp = new double[pointTemp.length];// = new double[42];
+//		double[] pointTemp = new double[avgPointTemp.length];
+
 		for(int i=1; i <= 60; i++)
 		{
-			for (int l=0; l < 42; l++)
+			// Initialize all 42 average temperatures to zero.
+			for (int l=0; l < avgPointTemp.length || l < 42; l++)
 			{
 //				avgPointTemp[l] = pointTemp[l] += pointTemp[l] / pointTemp.length;
 				// this.
 				avgPointTemp[l] = 0;
 			} // end for
 
+			// Loop through 144 hours (6 days)
 			for (int in=0; in < 144; in++)
 			{
+				// Increment the time by one hour.
 				time++;
-				computedTemperature = thermal.load();
-				thermal.diffuse(computedTemperature);
+				// computedTemperature
+				heatFlow = thermal.load();
+				double computedHeatFlow = thermal.load(time);
+				double[] computedTemperature = thermal.diffuse(heatFlow);
+				double[] temperature = thermal.diffuse(computedHeatFlow);
 				for (int l=0; l < 42; l++)
 				{
 					// this.
-					avgPointTemp[l] += computedTemperature / 144;
-					thermal.display(time, l, avgPointTemp);
+					avgPointTemp[l] += computedTemperature[l] / 144;
 				}
 //				computedTemperature /= 144;
 			} // end for
+			thermal.display(time, i, avgPointTemp);
+//			thermal.display(time, i, avgPointTemp);
 		} // end for
 	} // end main
 } // end class
