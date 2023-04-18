@@ -97,7 +97,7 @@ public class TicTacToe extends JFrame implements ActionListener
 //		went.setVerticalAlignment(SwingConstants.CENTER);
 
 
-
+/*
 		for(int i = 0; i < 3; i++)
 		{
 			for(int j = 0; j < 3; j++)
@@ -112,6 +112,8 @@ public class TicTacToe extends JFrame implements ActionListener
 //				frame.add(buttonsArray[i][j]);
 			}
 		}
+*/
+/*
 		for(int i = 0; i < buttonsArray.length; i++)
 		{
 			for(int j = 0; j < buttonsArray[i].length; j++)
@@ -119,7 +121,7 @@ public class TicTacToe extends JFrame implements ActionListener
 				buttonsArray[i][j].addActionListener(this);
 			}
 		}
-
+*/
 		for(int i = 0; i < buttons.length; i++)
 		{
 			button = new JButton();
@@ -180,7 +182,7 @@ public class TicTacToe extends JFrame implements ActionListener
 
 	private boolean win()
 	{
-		String[] strings = new String[9];
+//		String[] strings = new String[9];
 //		int xTurn[] = new int[5];
 //		int oTurn[] = new int[5];
 
@@ -188,47 +190,51 @@ public class TicTacToe extends JFrame implements ActionListener
 //		int oTurn[][] = new int[3][3];
 
 		boolean win = false;
-
+/*
 		for(int i = 0; i < buttons.length; i++)
 		{
 			strings[i] = button.getText();
 		}
+*/
 
 	// Horizontal
-		if(buttons[0].getText() == buttons[1].getText() && buttons[1].getText() == buttons[2].getText() &&
-			!buttons[0].getText().equals("") && !buttons[1].getText().equals("") && !buttons[2].getText().equals("") &&
-			buttons[0].getText() != "" && buttons[1].getText() != "" && buttons[2].getText() != "")
+		if(buttons[0].getText().equals(buttons[1].getText()) && buttons[1].getText().equals(buttons[2].getText()) &&
+			!buttons[0].getText().equals("") && !buttons[1].getText().equals("") && !buttons[2].getText().equals("")) // &&
+			// buttons[0].getText() == "" && buttons[1].getText() == "" && buttons[2].getText() == "")
 		{
 			win = true;
 		}
-		else if(buttons[3].getText() == buttons[4].getText() && buttons[4].getText() == buttons[5].getText() &&
-			buttons[3].getText().equals("") && buttons[4].getText().equals("") && buttons[5].getText().equals("") &&
-			buttons[3].getText() != "" && buttons[4].getText() != "" && buttons[5].getText() != "")
+		else if(buttons[3].getText().equals(buttons[4].getText()) && buttons[4].getText().equals(buttons[5].getText()) &&
+			!buttons[3].getText().equals("") && !buttons[4].getText().equals("") && !buttons[5].getText().equals("")) // &&
+			// buttons[3].getText() == "" && buttons[4].getText() == "" && buttons[5].getText() == "")
 		{
 			win = true;
 		}
-		else if(buttons[6].getText() == buttons[7].getText() && buttons[7].getText() == buttons[8].getText() &&
-			buttons[6].getText().equals("") && buttons[7].getText().equals("") && buttons[8].getText().equals("") &&
-			buttons[6].getText() != "" && buttons[7].getText() != "" && buttons[8].getText() != "")
+		else if(buttons[6].getText().equals(buttons[7].getText()) && buttons[7].getText().equals(buttons[8].getText()) &&
+			!buttons[6].getText().equals("") && !buttons[7].getText().equals("") && !buttons[8].getText().equals("")) // &&
+			// buttons[6].getText() == "" && buttons[7].getText() == "" && buttons[8].getText() == "")
 		{
 			win = true;
 		}
 
 	// Vertical
-		if(buttons[0].getText() == buttons[3].getText() && buttons[3].getText() == buttons[6].getText() &&
-			buttons[0].getText().equals("") && buttons[3].getText().equals("") && buttons[6].getText().equals("") &&
-			buttons[0].getText() != "" && buttons[3].getText() != "" && buttons[6].getText() != "")
+		if(buttons[0].getText().equals(buttons[3].getText()) && buttons[3].getText().equals(buttons[6].getText()) && // buttons[3].getText() == buttons[6].getText() &&
+			!buttons[0].getText().equals("") && !buttons[3].getText().equals("") && !buttons[6].getText().equals("")) // &&
+			// buttons[0].getText() == "" && buttons[3].getText() == "" && buttons[6].getText() == "")
+			// buttons[0].getText() != "" && buttons[3].getText() != "" && buttons[6].getText() != "")
 		{
 			win = true;
 		}
-		else if(buttons[1].getText() == buttons[4].getText() && buttons[4].getText() == buttons[7].getText() &&
-			buttons[1].getText().equals("") && buttons[4].getText().equals("") && buttons[7].getText().equals("") &&
-			buttons[1].getText() != "" && buttons[4].getText() != "" && buttons[7].getText() != "")
+		else if(buttons[1].getText().equals(buttons[4].getText()) && buttons[4].getText().equals(buttons[7].getText()) &&
+			!buttons[1].getText().equals("") && !buttons[4].getText().equals("") && !buttons[7].getText().equals("")) // &&
+			// buttons[1].getText() == "" && buttons[4].getText() == "" && buttons[7].getText() == "")
+			// buttons[1].getText() != "" && buttons[4].getText() != "" && buttons[7].getText() != "")
 		{
 			win = true;
 		}
-		else if(buttons[2].getText() == buttons[5].getText() && buttons[5].getText() == buttons[8].getText() &&
-			buttons[2].getText().equals("") && buttons[5].getText().equals("") && buttons[8].getText().equals("") &&
+		else if(buttons[2].getText().equals(buttons[5].getText()) && buttons[5].getText().equals(buttons[8].getText()) &&
+			!buttons[2].getText().equals("") && !buttons[5].getText().equals("") && !buttons[8].getText().equals("") &&
+			// buttons[2].getText() == "" && buttons[5].getText() == "" && buttons[8].getText() == "")
 			buttons[2].getText() != "" && buttons[5].getText() != "" && buttons[8].getText() != "")
 		{
 			win = true;
@@ -236,21 +242,19 @@ public class TicTacToe extends JFrame implements ActionListener
 
 	// Diagonal
 		if(buttons[0].getText() == buttons[4].getText() && buttons[4].getText() == buttons[8].getText() &&
-			buttons[0].getText().equals("") && buttons[4].getText().equals("") && buttons[8].getText().equals("") &&
-			buttons[0].getText() != "" && buttons[4].getText() != "" && buttons[8].getText() != "")
+			!buttons[0].getText().equals("") && !buttons[4].getText().equals("") && !buttons[8].getText().equals("")) // &&
+			// buttons[0].getText() == "" && buttons[4].getText() == "" && buttons[8].getText() == "")
 		{
 			win = true;
 		}
 		else if(buttons[2].getText() == buttons[4].getText() && buttons[4].getText() == buttons[6].getText() &&
-			buttons[2].getText().equals("") && buttons[4].getText().equals("") && buttons[6].getText().equals("") &&
-			buttons[2].getText() != "" && buttons[4].getText() != "" && buttons[6].getText() != "")
+			!buttons[2].getText().equals("") && !buttons[4].getText().equals("") && !buttons[6].getText().equals("")) // &&
+			// buttons[2].getText() == "" && buttons[4].getText() == "" && buttons[6].getText() == "")
 		{
 			win = true;
-		}
+		}		
 
-//		if(!turn)
-		{
-		}
+//		if(!turn) { }
 
 		return win;
 	}
@@ -293,20 +297,20 @@ public class TicTacToe extends JFrame implements ActionListener
 				}
 			}
 		}
-
+/*
 		for(int i = 0; i < buttonsArray.length; i++)
 		{
 			for(int j = 0; j < buttonsArray[i].length; j++)
 			{
 				if(ae.getSource() == buttonsArray[i][j])
 				{
-					if(buttons[i].getText().isEmpty())
+					if(buttonsArray[i][j].getText().isEmpty())
 					{
 						turn = turnBoolean ? "O" : "X";
 						next.setText("Next: " + turn);
 						turn = turnBoolean ? "X" : "O";
 						went.setText("Went: " + turn);
-						buttons[i].setText(turnBoolean ? "X" : "O");
+						buttonsArray[i][j].setText(turnBoolean ? "X" : "O");
 
 						if(win())
 						{
@@ -333,6 +337,7 @@ public class TicTacToe extends JFrame implements ActionListener
 				}
 			}
 		}
+ */
 	}
 
 	public static void main(String[] args)
