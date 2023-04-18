@@ -1,0 +1,55 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "BluetoothDeviceManager",
+            "request": "launch",
+            "mainClass": "BluetoothDeviceManager",
+            "projectName": "Java_b275b8c0"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "JFreeChart",
+            "request": "launch",
+            "mainClass": "org.jfree.chart.JFreeChart",
+            "projectName": "jfreechart"
+        },
+        {
+            "type": "java",
+            "name": "BarChartDemo1",
+            "request": "launch",
+            "mainClass": "org.jfree.chart.demo.BarChartDemo1",
+            "projectName": "jfreechart"
+        },
+        {
+            "type": "java",
+            "name": "PieChartDemo1",
+            "request": "launch",
+            "mainClass": "org.jfree.chart.demo.PieChartDemo1",
+            "projectName": "jfreechart"
+        },
+        {
+            "type": "java",
+            "name": "TimeSeriesChartDemo1",
+            "request": "launch",
+            "mainClass": "org.jfree.chart.demo.TimeSeriesChartDemo1",
+            "projectName": "jfreechart"
+        },
+        {
+            "type": "java",
+            "name": "Launch Program",
+            "request": "launch",
+            "mainClass": "${file}"
+        }
+    ]
+}
