@@ -6,6 +6,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Inventory",
+            "request": "launch",
+            "mainClass": "Inventory",
+            "projectName": ""
+        },
+        {
+            "type": "java",
+            "name": "Templates",
+            "request": "launch",
+            "mainClass": "Templates",
+            "projectName": ""
+        },
+        {
+            "type": "java",
+            "name": "LivePreview",
+            "request": "launch",
+            "mainClass": "LivePreview",
+            "projectName": ""
+        },
+        {
+            "type": "java",
+            "name": "KeyTyper",
+            "request": "launch",
+            "mainClass": "KeyTyper",
+            "projectName": ""
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"
@@ -64,7 +92,6 @@
             "name": "Launch Program",
             "request": "launch",
             "mainClass": "${file}"
-           // "classPath": ["${workspaceFolder}/bluecove-2.1.0.jar"]
-        }        
+        }
     ]
 }
