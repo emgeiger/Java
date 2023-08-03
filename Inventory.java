@@ -48,7 +48,6 @@ public class Inventory extends JFrame implements ActionListener, LayoutManager
 
 //        jPanel = new JPanel();
 
-
 //        setLayout(new VerticalFlowLayout()); // set the layout of the frame
 
 //        main.setLayout(new VerticalFlowLayout());
@@ -69,8 +68,8 @@ public class Inventory extends JFrame implements ActionListener, LayoutManager
 //        remove.setVisible(false);
 
         // jPanel.add(jTextField);
-        jPanel.add(jSpinner);
-        jPanel.setLayout(new FlowLayout(FlowLayout.RIGHT));
+//        jPanel.add(jSpinner); // null pointer
+//        jPanel.setLayout(new FlowLayout(FlowLayout.RIGHT));
 
 //        box = Box.createVerticalBox();
 //        box.add(jPanel);
