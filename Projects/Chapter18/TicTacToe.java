@@ -25,7 +25,7 @@ public class TicTacToe extends JFrame implements ActionListener
 //	private JButton[] buttonArray;
 	private JButton[] buttons;
 	private JButton button;
-	private JComboBox difficulty;
+//	private JComboBox difficulty;
 //	private JButton buttons;
 
 	private boolean turnBoolean;
@@ -62,7 +62,7 @@ public class TicTacToe extends JFrame implements ActionListener
 
 		instructions = new JLabel("TIC-TAC-TOE\nTo start, click one of the squares.");
 
-		turn= turnBoolean ? "X" : "O";
+		turn = turnBoolean ? "X" : "O";
 		next = new JLabel("Next: " + turn);
 		went = new JLabel("Just went: ");
 //		winning = new JLabel();
@@ -71,7 +71,7 @@ public class TicTacToe extends JFrame implements ActionListener
 
 		buttons = new JButton[9];
 //		buttonArray = new JButton[9];
-		buttonsArray = new JButton[3][3];
+	//	buttonsArray = new JButton[3][3];
 //		arrayButtons = new ArrayList<ArrayList<JButton>>();
 
 //***************************************************************
@@ -258,7 +258,17 @@ public class TicTacToe extends JFrame implements ActionListener
 
 		return win;
 	}
-
+/*
+	public boolean isDraw() {
+		for (int i = 0; i < 9; i++) {
+			if (buttons[i].getText().equals("")) {
+				return false; // There is an empty cell, game is not a draw
+			}
+		}
+		// All cells are filled, check for a winner
+		return !isWinner("X") && !isWinner("O");
+	}	
+*/
 	public void actionPerformed(ActionEvent ae)
 	{
 		for(int i = 0; i < buttons.length; i++)
@@ -290,6 +300,13 @@ public class TicTacToe extends JFrame implements ActionListener
 							}
 							break;
 					}
+/*
+					else if(isDraw())
+					{
+						JOptionPane.showMessageDialog(c, "Cat's game!"); // "Draw!");
+						break;
+					}
+*/					
 					else // if(!win())
 					{
 						turnBoolean = !turnBoolean;
@@ -337,7 +354,7 @@ public class TicTacToe extends JFrame implements ActionListener
 				}
 			}
 		}
- */
+*/
 	}
 
 	public static void main(String[] args)
