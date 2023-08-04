@@ -6,6 +6,32 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CylinderDriver",
+            "request": "launch",
+            "mainClass": "CylinderDriver"
+        },
+        {
+            "type": "java",
+            "name": "GraphicalCylinder",
+            "request": "launch",
+            "mainClass": "GraphicalCylinder"
+        },
+        {
+            "type": "java",
+            "name": "EclipseSlider",
+            "request": "launch",
+            "mainClass": "EclipseSlider",
+            "projectName": ""
+        },
+        {
+            "type": "java",
+            "name": "Circle",
+            "request": "launch",
+            "mainClass": "Circle",
+            "projectName": ""
+        },
+        {
+            "type": "java",
             "name": "Inventory",
             "request": "launch",
             "mainClass": "Inventory",
