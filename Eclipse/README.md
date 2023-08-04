@@ -61,6 +61,16 @@ cd bin
 java EclipseSlider
 ```
 
+**Option 5: Simple VS Code Development**
+
+```powershell
+# Simple compilation for basic development
+javac -d bin src/*.java
+
+# Run the basic version
+java -cp bin EclipseSlider
+```
+
 ### 3. Verify Compilation
 
 Check that class files are present:
@@ -343,3 +353,20 @@ To enhance this project further:
 - [Java Swing Tutorial](https://docs.oracle.com/javase/tutorial/uiswing/)
 - [Astronomy Data Sources](https://github.com/astronexus/HYG-Database)
 - [Eclipse Calculation Algorithms](https://eclipse.gsfc.nasa.gov/SEcat5/SE5000-4999.html)
+
+## VS Code Development
+
+### Folder Structure
+
+For VS Code development, the workspace contains:
+
+- `src`: the folder to maintain sources
+- `lib`: the folder to maintain dependencies
+
+Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+
+> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+
+### Dependency Management
+
+The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
