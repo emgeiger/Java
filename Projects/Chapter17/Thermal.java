@@ -193,16 +193,20 @@ public double load()
 		double conductivity = 0.83;           // BTU/Hr/ft/degF
 		double density = 140;                 // lb/cuft
 		double specificHeat = 0.19;           // BTU/lb/degF
-		double diffusion =
-		conductivity / (density * specificHeat);  // sqft/hour
+		// double pointTemp[] = new double[41];
+		double[] pointTemp = new double[41];
+		// // Calculate the diffusion coefficient.
+		double diffusion = conductivity / (density * specificHeat);  // sqft/hour
 		double wellRadius = 0.25;                   // ft
 		double deltaX = 0.33;                       // ft
 		double factor = diffusion * deltaT / (deltaX * deltaX);
 
 		heatFlow = pointTemp[0];
+		
 		pointTemp[0] = pointTemp[1] + heatFlow /
 		((2 * Math.PI) * depth * conductivity * Math.log(1 + deltaX / wellRadius));
 
+		// Iterate over the points in the domain.
 		for (int j=1; j < 40 && j <= 39; j++)
 		{
 			pointTemp[j] = pointTemp[j] + factor *
@@ -221,8 +225,10 @@ public double load()
 
 		}
 
+		// Set the temperature at the right boundary.
 		pointTemp[41] = pointTemp[40];
 
+		// Retturn the temperature array.
 		return pointTemp;
 	} // end diffuse
 
@@ -374,7 +380,7 @@ public double load()
 		double heatFlow = 0;
 		// double computedTemperature = 0;
 		double time = 0;
-		double[] avgPointTemp = new double[pointTemp.length];// = new double[42];
+		double[] avgPointTemp = new double[pointTemp.length]; // = new double[42];
 //		double[] pointTemp = new double[avgPointTemp.length];
 
 		for(int i=1; i <= 60; i++)
