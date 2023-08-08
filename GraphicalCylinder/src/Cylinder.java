@@ -418,7 +418,18 @@ public class Cylinder extends JPanel
         double imageRotAngle;               // image rotation angle
         GeneralPath shape;                  // curved cylinder side
         float c;                            // current color level
-    
+
+        /*
+        r1 = 0.3f;
+        g1 = 0.3f;
+        b1 = 0.3f;
+        */
+        /*
+        r2 = 0.7f;
+        g2 = 0.7f;
+        b2 = 0.7f;
+        */
+
         // Apparent tipping of cylinder
         double tipCosine = Math.cos(cylAzm) * Math.cos(cylElev);
         double tipSine = Math.sqrt(1.0 - tipCosine * tipCosine);
