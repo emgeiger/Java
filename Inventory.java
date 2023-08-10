@@ -36,13 +36,15 @@ public class Inventory extends JFrame implements ActionListener, LayoutManager
     public Inventory()
     {
 		super("Inventory"); // sets the title
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
 //       JScrollPane jScrollPane = new JScrollPane(main);
         main.setLayout(new BoxLayout(main, BoxLayout.PAGE_AXIS));
 
+/*
         JTextField jTextField = new JTextField(8);
         SpinnerModel spinnerModel = new SpinnerNumberModel(0, 0, 9999, 1);
         JSpinner jSpinner = new JSpinner(spinnerModel);
+*/
 
  //       JButton jButton = new JButton("+");
 
