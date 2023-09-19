@@ -1,3 +1,4 @@
+
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -15,15 +16,34 @@ public class KeyTyper implements KeyListener
 		addKeyListener(this);
 	}
 
-    public void keyPressed(KeyEvent ke)
-    {
-
+public class KeyLogger extends JFrame implements KeyListener {
+    public KeyLogger() {
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        createContents();
+        pack();
+        setVisible(true);
     }
 
-    public void keyReleased(KeyEvent ke)
-    {
-
+    private void createContents() {
+        addKeyListener(this);
     }
+
+    public void keyPressed(KeyEvent e) {
+        System.out.println("Key pressed: " + e.getKeyChar());
+    }
+
+    public void keyReleased(KeyEvent e) {
+        System.out.println("Key released: " + e.getKeyChar());
+    }
+
+    public void keyTyped(KeyEvent e) {
+        System.out.println("Key typed: " + e.getKeyChar());
+    }
+
+    public static void main(String[] args) {
+        new KeyLogger();
+    }
+}
 
     public void keyTyped(KeyEvent ke)
     {
