@@ -77,9 +77,7 @@ public class Property extends JFrame implements ActionListener
         "George.T-CTR.Morris@faa.gov", "Martin.A-CTR.Sanchez@faa.gov", "William.R-CTR.Watson@faa.gov", 
         "Eric M-CTR Geiger", "Carl.CTR.Dodd@faa.gov", "Seth.A-CTR.Hilliard@faa.gov"};
 
-    private String[] emailsTo = {"Ahmad.C.Hajmirsadeghi@faa.gov", "Neal.Wilson@faa.gov", "thomas.o.foster@faa.gov", "Blain.L.Hodgen@faa.gov", 
-        "George.T-CTR.Morris@faa.gov", "Martin.A-CTR.Sanchez@faa.gov", "William.R-CTR.Watson@faa.gov", 
-        "Eric M-CTR Geiger", "Carl.CTR.Dodd@faa.gov", "Seth.A-CTR.Hilliard@faa.gov"};
+    private String[] emailsTo = {""};
 
     public Property()
     {
