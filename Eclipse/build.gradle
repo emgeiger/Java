@@ -1,0 +1,59 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Swiss Ephemeris for astronomical calculations
+    implementation 'org.swisseph:swisseph:2.10.03-2'
+    
+    // Testing dependencies
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.9.2'
+    testImplementation 'org.mockito:mockito-core:5.1.1'
+    testImplementation 'org.mockito:mockito-junit-jupiter:5.1.1'
+    
+    // Additional testing for astronomical calculations
+    testImplementation 'org.junit.jupiter:junit-jupiter-params:5.9.2'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
+
+application {
+    mainClass = 'EclipseSlider'
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src']
+        }
+    }
+}
+
+// Custom task to compile to the bin directory (matching VS Code settings)
+compileJava {
+    destinationDirectory = file('bin')
+}
+
+// Task to run the application
+task runEclipse(type: JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'EclipseSlider'
+}
+
+// Configure test task
+test {
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+        exceptionFormat "full"
+    }
+}
