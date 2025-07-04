@@ -4,7 +4,6 @@ import javax.swing.*; // JFrame,JPanel,SwingConstants
 
 public class Cylinder extends JPanel
 {
-
     private double cylElev;    // cylinder axis elevation radians
     private double cylAzm;     // cylinder axis azimuth radians
     private double cylH = 400; // cylinder height in pixels
