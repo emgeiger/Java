@@ -1,6 +1,7 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import java.awt.BorderLayout;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
