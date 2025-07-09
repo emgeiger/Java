@@ -17,6 +17,11 @@ Successfully enhanced the RotationalRhythm project with advanced audio capabilit
 - **Color coding**: Customizable colors for each instrument track
 - **Interactive beats**: Click to toggle beats on/off
 - **Real-time indicator**: Visual marker showing current beat position
+- **Tempo clock hand**: Animated center hand that rotates to visualize BPM and current beat
+  - Center circle displays current BPM value
+  - Clock hand rotates smoothly through each measure
+  - Tempo scale markers show quarter and sixteenth note positions
+  - Hand resets to 12 o'clock position when stopped
 
 ### 🎛️ Controls & Features
 - **BPM slider**: Adjustable tempo from 60-200 BPM
@@ -94,6 +99,7 @@ RotationalRhythm/
 - [x] Interactive beat programming
 - [x] Visual playback indicator
 - [x] Color-coded instruments
+- [x] **Tempo clock hand visualization**: Animated center hand showing BPM and beat position
 
 ## Future Enhancement Ideas 💡
 - **Export/Import**: Save and load rhythm patterns
