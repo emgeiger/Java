@@ -40,7 +40,7 @@ public class RotationalRhythm extends JFrame
     private static final String[] GENRES = {"Pop", "Rock", "Hip Hop", "Classical", "Jazz"};
     private static final String[] INSTRUMENTS = {"Guitar", "Piano", "Drums", "Violin", "Flute"};
 
-    [// Create a new Clip object to play the sound
+    // Create a new Clip object to play the sound
     Clip clip;
 
     int bpm;
@@ -149,7 +149,7 @@ public class RotationalRhythm extends JFrame
     }
  */
 
-    private static void playRhythm(int bpm) {
+    private void playRhythm(int bpm) {
         // Implementation of the playRhythm method
 
         // Calculate the delay between beats in milliseconds
@@ -172,12 +172,6 @@ public class RotationalRhythm extends JFrame
 
         // Start playing the sound repeatedly
         clip.loop(Clip.LOOP_CONTINUOUSLY);
-
-        // Wait for the user to press Enter to stop the sound
-        System.out.println("Press Enter to stop the sound.");
-        System.console().readLine();
-
-        // Stop playing the sound
         clip.stop();
         clip.close();
     }
@@ -200,22 +194,17 @@ public class RotationalRhythm extends JFrame
         });
     }
 
-        public static void playSound(String filename) {
-            try {
-                // Get the audio input stream from the file
-                AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(filename).getAbsoluteFile());
-
-                // Get the clip for the audio input stream
-                Clip clip = AudioSystem.getClip();
-
-                // Open the clip with the audio input stream
-                clip.open(audioInputStream);
-
-                // Start playing the clip
-                clip.start();
-            } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
-                e.printStackTrace();
-            }
+        private int getBpm(String genre, String instrument) {
+            // Combine genre and instrument BPM, defaulting to genre if instrument BPM is 0
+            int genreBpm = BPM_BY_GENRE.getOrDefault(genre, 120);
+            int instrumentBpm = BPM_BY_INSTRUMENT.getOrDefault(instrument, 0);
+            return instrumentBpm > 0 ? instrumentBpm : genreBpm;
+        }
+        
+        private void playSound(int bpm) {
+            // For now, just start a simple rhythm - this can be enhanced later
+            this.bpm = bpm;
+            playRhythm(bpm);
         }
 }
 /*
