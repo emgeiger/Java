@@ -118,6 +118,20 @@
             "name": "Launch Program",
             "request": "launch",
             "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "SimpleNutritionCalculator",
+            "request": "launch",
+            "mainClass": "SimpleNutritionCalculator",
+            "cwd": "${workspaceFolder}/NutritionCalculator"
+        },
+        {
+            "type": "java",
+            "name": "NutritionApp (Full)",
+            "request": "launch",
+            "mainClass": "com.nutrition.calculator.NutritionApp",
+            "cwd": "${workspaceFolder}/NutritionCalculator"
         }
     ]
 }
