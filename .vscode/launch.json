@@ -132,6 +132,22 @@
             "request": "launch",
             "mainClass": "com.nutrition.calculator.NutritionApp",
             "cwd": "${workspaceFolder}/NutritionCalculator"
+        },
+        {
+            "type": "java",
+            "name": "Enhanced Rotational Rhythm",
+            "request": "launch",
+            "mainClass": "EnhancedRotationalRhythm",
+            "projectName": "${workspaceFolderBasename}",
+            "cwd": "${workspaceFolder}/RotationalRhythm"
+        },
+        {
+            "type": "java",
+            "name": "Audio Sample Generator",
+            "request": "launch",
+            "mainClass": "AudioSampleGenerator",
+            "projectName": "${workspaceFolderBasename}",
+            "cwd": "${workspaceFolder}/RotationalRhythm"
         }
     ]
 }

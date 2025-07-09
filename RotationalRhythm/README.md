@@ -14,6 +14,7 @@ A visual rhythm sequencer with a clock-like interface that allows you to create 
 - Multiple rings for different instruments
 - Color-coded instrument tracks
 - Visual beat progression indicator
+- **Tempo clock hand**: Animated hand in the center showing BPM and current beat position
 - Click to toggle beats on/off
 
 ### 🥁 Rhythm Sequencer
