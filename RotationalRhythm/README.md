@@ -41,6 +41,12 @@ This creates sample drum sounds (kick, snare, hi-hat, cymbal) in the `audio-samp
 run-enhanced.bat
 ```
 
+### 4. Troubleshoot Audio Issues (if needed)
+```bash
+run-audio-diagnostic.bat
+```
+This diagnostic tool helps identify audio loading problems by testing your audio files.
+
 ## How to Use
 
 1. **Load Audio Files**: Click "Load Sounds Folder" and select a folder containing audio files
