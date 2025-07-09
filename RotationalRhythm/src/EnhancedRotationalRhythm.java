@@ -25,12 +25,15 @@ public class EnhancedRotationalRhythm extends JFrame {
     private static final int BASE_RADIUS = 80;
     private static final int RING_SPACING = 30;
     private static final int BEATS_PER_MEASURE = 16;
+    private static final int CLOCK_HAND_LENGTH = 60;
+    private static final int CENTER_CIRCLE_RADIUS = 15;
     
     // Audio and timing
     private Timer rhythmTimer;
     private int currentBeat = 0;
     private int bpm = 120;
     private boolean isPlaying = false;
+    private double clockHandAngle = 0.0; // Angle for the tempo clock hand
     
     // UI Components
     private RhythmPanel rhythmPanel;
@@ -163,11 +166,15 @@ public class EnhancedRotationalRhythm extends JFrame {
         playButton.setText("Play");
         rhythmTimer.stop();
         currentBeat = 0;
+        clockHandAngle = 0.0; // Reset clock hand to 12 o'clock position
         rhythmPanel.repaint();
     }
     
     private void nextBeat() {
         currentBeat = (currentBeat + 1) % BEATS_PER_MEASURE;
+        
+        // Update clock hand angle - full rotation every measure (16 beats)
+        clockHandAngle = (currentBeat * 2 * Math.PI) / BEATS_PER_MEASURE;
         
         // Play sounds for active beats
         for (RhythmRing ring : rhythmRings) {
@@ -356,6 +363,9 @@ public class EnhancedRotationalRhythm extends JFrame {
             
             // Draw current beat indicator
             drawCurrentBeatIndicator(g2d);
+            
+            // Draw tempo clock hand in center
+            drawTempoClockHand(g2d);
         }
         
         private void drawClockFace(Graphics2D g2d) {
@@ -437,6 +447,92 @@ public class EnhancedRotationalRhythm extends JFrame {
             int y2 = (int) (CLOCK_CENTER_Y + outerRadius * Math.sin(angle));
             
             g2d.drawLine(x1, y1, x2, y2);
+        }
+        
+        private void drawTempoClockHand(Graphics2D g2d) {
+            // Draw center circle
+            g2d.setColor(Color.DARK_GRAY);
+            g2d.fillOval(CLOCK_CENTER_X - CENTER_CIRCLE_RADIUS, 
+                        CLOCK_CENTER_Y - CENTER_CIRCLE_RADIUS, 
+                        CENTER_CIRCLE_RADIUS * 2, CENTER_CIRCLE_RADIUS * 2);
+            
+            // Draw center circle border
+            g2d.setColor(Color.WHITE);
+            g2d.setStroke(new BasicStroke(2));
+            g2d.drawOval(CLOCK_CENTER_X - CENTER_CIRCLE_RADIUS, 
+                        CLOCK_CENTER_Y - CENTER_CIRCLE_RADIUS, 
+                        CENTER_CIRCLE_RADIUS * 2, CENTER_CIRCLE_RADIUS * 2);
+            
+            // Draw BPM text in center
+            g2d.setColor(Color.WHITE);
+            Font bpmFont = new Font(Font.SANS_SERIF, Font.BOLD, 10);
+            g2d.setFont(bpmFont);
+            String bpmText = String.valueOf(bpm);
+            FontMetrics fm = g2d.getFontMetrics();
+            int textX = CLOCK_CENTER_X - fm.stringWidth(bpmText) / 2;
+            int textY = CLOCK_CENTER_Y + fm.getHeight() / 4;
+            g2d.drawString(bpmText, textX, textY);
+            
+            // Draw clock hand only when playing
+            if (isPlaying) {
+                // Calculate hand position (starts at top and rotates clockwise)
+                double handAngle = clockHandAngle - Math.PI / 2; // Start at 12 o'clock position
+                int handEndX = (int) (CLOCK_CENTER_X + CLOCK_HAND_LENGTH * Math.cos(handAngle));
+                int handEndY = (int) (CLOCK_CENTER_Y + CLOCK_HAND_LENGTH * Math.sin(handAngle));
+                
+                // Draw the main hand
+                g2d.setColor(Color.CYAN);
+                g2d.setStroke(new BasicStroke(3, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
+                g2d.drawLine(CLOCK_CENTER_X, CLOCK_CENTER_Y, handEndX, handEndY);
+                
+                // Draw hand tip
+                g2d.setColor(Color.WHITE);
+                g2d.fillOval(handEndX - 3, handEndY - 3, 6, 6);
+                
+                // Draw center dot
+                g2d.setColor(Color.CYAN);
+                g2d.fillOval(CLOCK_CENTER_X - 3, CLOCK_CENTER_Y - 3, 6, 6);
+            }
+            
+            // Draw tempo scale markers around the center
+            drawTempoScaleMarkers(g2d);
+        }
+        
+        private void drawTempoScaleMarkers(Graphics2D g2d) {
+            g2d.setColor(Color.GRAY);
+            g2d.setStroke(new BasicStroke(1));
+            
+            // Draw 4 main tempo markers (quarter note positions)
+            for (int i = 0; i < 4; i++) {
+                double angle = (i * 2 * Math.PI / 4) - Math.PI / 2; // Start at top
+                int innerRadius = CENTER_CIRCLE_RADIUS + 5;
+                int outerRadius = CENTER_CIRCLE_RADIUS + 12;
+                
+                int x1 = (int) (CLOCK_CENTER_X + innerRadius * Math.cos(angle));
+                int y1 = (int) (CLOCK_CENTER_Y + innerRadius * Math.sin(angle));
+                int x2 = (int) (CLOCK_CENTER_X + outerRadius * Math.cos(angle));
+                int y2 = (int) (CLOCK_CENTER_Y + outerRadius * Math.sin(angle));
+                
+                g2d.setStroke(new BasicStroke(2));
+                g2d.drawLine(x1, y1, x2, y2);
+            }
+            
+            // Draw 16 smaller markers for 16th note positions
+            for (int i = 0; i < 16; i++) {
+                if (i % 4 != 0) { // Skip the main markers
+                    double angle = (i * 2 * Math.PI / 16) - Math.PI / 2;
+                    int innerRadius = CENTER_CIRCLE_RADIUS + 7;
+                    int outerRadius = CENTER_CIRCLE_RADIUS + 10;
+                    
+                    int x1 = (int) (CLOCK_CENTER_X + innerRadius * Math.cos(angle));
+                    int y1 = (int) (CLOCK_CENTER_Y + innerRadius * Math.sin(angle));
+                    int x2 = (int) (CLOCK_CENTER_X + outerRadius * Math.cos(angle));
+                    int y2 = (int) (CLOCK_CENTER_Y + outerRadius * Math.sin(angle));
+                    
+                    g2d.setStroke(new BasicStroke(1));
+                    g2d.drawLine(x1, y1, x2, y2);
+                }
+            }
         }
     }
     
