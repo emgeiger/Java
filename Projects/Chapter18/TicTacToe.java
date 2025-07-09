@@ -1,4 +1,3 @@
-import java.util.*;
 import javax.swing.*;
 import javax.swing.border.*;
 import java.awt.*;
@@ -11,6 +10,7 @@ public class TicTacToe extends JFrame implements ActionListener
 
 	private int xWinStreak = 0;
 	private int oWinStreak = 0;
+	private int drawCount = 0;
 
 	private JLabel next;
 	private JLabel went;
@@ -18,19 +18,14 @@ public class TicTacToe extends JFrame implements ActionListener
 //	private JLabel winning;
 	private JLabel xWins;
 	private JLabel oWins;
+	private JLabel draws;
 
-	private ArrayList<JButton> arrayButton;
-	private ArrayList<ArrayList<JButton>> arrayButtons;
-	private JButton[][] buttonsArray;
-//	private JButton[] buttonArray;
 	private JButton[] buttons;
 	private JButton button;
 //	private JComboBox difficulty;
 //	private JButton buttons;
 
 	private boolean turnBoolean;
-	private boolean xTurn;
-	private boolean oTurn;
 
 	private String turn = "";
 
@@ -58,9 +53,9 @@ public class TicTacToe extends JFrame implements ActionListener
 		JPanel labelPanel = new JPanel(new GridLayout(1, 2));
 		JPanel instruction = new JPanel();
 		JPanel buttonPanel = new JPanel(new GridLayout(3, 3));
-		JPanel winningPanel = new JPanel(new GridLayout(1, 2));
+		JPanel winningPanel = new JPanel(new GridLayout(1, 3));
 
-		instructions = new JLabel("TIC-TAC-TOE\nTo start, click one of the squares.");
+		instructions = new JLabel("To start, click one of the squares.");
 
 		turn = turnBoolean ? "X" : "O";
 		next = new JLabel("Next: " + turn);
@@ -68,6 +63,7 @@ public class TicTacToe extends JFrame implements ActionListener
 //		winning = new JLabel();
 		xWins = new JLabel();
 		oWins = new JLabel();
+		draws = new JLabel();
 
 		buttons = new JButton[9];
 //		buttonArray = new JButton[9];
@@ -150,6 +146,7 @@ public class TicTacToe extends JFrame implements ActionListener
 
 		xWins.setText("X wins: " + Integer.toString(xWinStreak));
 		oWins.setText("O wins: " + Integer.toString(oWinStreak));
+		draws.setText("Draws: " + Integer.toString(drawCount));
 
 //***************************************************************
 //		xWins.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -172,9 +169,11 @@ public class TicTacToe extends JFrame implements ActionListener
 //		xWins.setVerticalAlignment(SwingConstants.CENTER);
 		oWins.setHorizontalAlignment(SwingConstants.CENTER);
 //		oWins.setVerticalAlignment(SwingConstants.CENTER);
+		draws.setHorizontalAlignment(SwingConstants.CENTER);
 
 
 		winningPanel.add(xWins);
+		winningPanel.add(draws);
 		winningPanel.add(oWins);
 
 		add(winningPanel, BorderLayout.SOUTH);
@@ -258,6 +257,27 @@ public class TicTacToe extends JFrame implements ActionListener
 
 		return win;
 	}
+
+	private boolean isDraw() {
+		for (int i = 0; i < 9; i++) {
+			if (buttons[i].getText().equals("")) {
+				return false; // There is an empty cell, game is not a draw
+			}
+		}
+		// All cells are filled, check for a winner
+		return !win();
+	}
+
+	private void clearBoard() {
+		for (int i = 0; i < buttons.length; i++) {
+			buttons[i].setText("");
+			buttons[i].setEnabled(true);
+		}
+		turnBoolean = false; // Reset to X's turn
+		turn = turnBoolean ? "X" : "O";
+		next.setText("Next: " + turn);
+		went.setText("Just went: ");
+	}
 /*
 	public boolean isDraw() {
 		for (int i = 0; i < 9; i++) {
@@ -282,6 +302,7 @@ public class TicTacToe extends JFrame implements ActionListener
 					turn = turnBoolean ? "X" : "O";
 					went.setText("Went: " + turn);
 					buttons[i].setText(turnBoolean ? "X" : "O");
+					buttons[i].setEnabled(false); // Disable the button after it's clicked
 
 					if(win())
 					{
@@ -298,15 +319,17 @@ public class TicTacToe extends JFrame implements ActionListener
 								oWins.setText("O wins: " + Integer.toString(oWinStreak));
 //								winning.setText(Integer.toString(oWinStreak));
 							}
+							clearBoard();
 							break;
 					}
-/*
 					else if(isDraw())
 					{
-						JOptionPane.showMessageDialog(c, "Cat's game!"); // "Draw!");
+						JOptionPane.showMessageDialog(c, "It's a draw!");
+						drawCount++;
+						draws.setText("Draws: " + Integer.toString(drawCount));
+						clearBoard();
 						break;
-					}
-*/					
+					}					
 					else // if(!win())
 					{
 						turnBoolean = !turnBoolean;
