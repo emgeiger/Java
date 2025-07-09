@@ -42,22 +42,42 @@ NutritionCalculator/
 
 ### Prerequisites
 - Java 11 or higher
-- Maven (for build management)
+- Maven (for advanced builds - optional)
 
-### Quick Start
+### Quick Start (Recommended)
 
+#### Option 1: Simple Standalone Version
 ```bash
-# Clone and navigate
+# Navigate to project directory
 cd NutritionCalculator
 
-# Compile the project
-javac -d bin -cp src/main/java src/main/java/com/nutrition/calculator/*.java
+# Run directly (no compilation needed)
+java SimpleNutritionCalculator
+```
+
+#### Option 2: Full Featured Version
+```bash
+# Build the project using provided scripts
+.\build.bat       # Windows
+# or ./build.sh   # Linux/Mac (if available)
 
 # Run the application
+.\run.bat         # Windows  
+# or ./run.sh     # Linux/Mac (if available)
+
+# Or run directly after building
 java -cp bin com.nutrition.calculator.NutritionApp
 ```
 
-### Using Maven (Recommended)
+#### Option 3: VS Code Development
+- Open the Java monorepo in VS Code
+- Navigate to NutritionCalculator folder
+- Use `F5` or `Ctrl+F5` to run
+- Choose launch configuration:
+  - "SimpleNutritionCalculator" (standalone)
+  - "NutritionApp (Full)" (full featured)
+
+### Using Maven (Advanced)
 ```bash
 # Build the project
 mvn clean compile
