@@ -15,7 +15,9 @@ public class Cylinder extends JPanel
     private float b1;
     private float r2;
     private float g2;
-    private float b2;  
+    private float b2;
+    private double cylX = 0; // Add position tracking for drag
+    private double cylY = 0;
 
     public Cylinder(double elev, double azimuth)
     {
@@ -29,6 +31,10 @@ public class Cylinder extends JPanel
         {
           cylAzm = Math.signum(cylAzm) * Math.PI / 2.0001;
         }
+        
+        // Initialize default colors
+        r1 = 0.3f; g1 = 0.3f; b1 = 0.8f; // Blue-ish dark
+        r2 = 0.7f; g2 = 0.7f; b2 = 1.0f; // Blue-ish light
     }
 /*
     public void setElevation(double elev)
@@ -489,4 +495,50 @@ public class Cylinder extends JPanel
         g2d.setColor(new Color(c, c, c));
         g2d.fill(frontEllipse);        
     }
+
+    // Add missing methods for drag functionality and rotation
+    public void setCylX(double x) {
+        this.cylX = x;
+        repaint();
+    }
+    
+    public void setCylY(double y) {
+        this.cylY = y;
+        repaint();
+    }
+    
+    public double getCylX() {
+        return cylX;
+    }
+    
+    public double getCylY() {
+        return cylY;
+    }
+    
+    // Add methods to update angles from sliders
+    public void setElevation(double elev) {
+        cylElev = Math.toRadians(elev);
+        if (Math.abs(cylElev) >= Math.PI / 2.0) {
+            cylElev = Math.signum(cylElev) * Math.PI / 2.0001;
+        }
+        repaint();
+    }
+
+    public void setAzimuth(double azimuth) {
+        cylAzm = Math.toRadians(azimuth);
+        if (Math.abs(cylAzm) >= Math.PI / 2.0) {
+            cylAzm = Math.signum(cylAzm) * Math.PI / 2.0001;
+        }
+        repaint();
+    }
+
+    public double getElevation() {
+        return Math.toDegrees(cylElev);
+    }
+
+    public double getAzimuth() {
+        return Math.toDegrees(cylAzm);
+    }
+
+    //***********************************************************
 }
