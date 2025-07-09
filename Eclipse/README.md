@@ -25,6 +25,7 @@ The Swiss Ephemeris integration works out-of-the-box with no API keys or interne
 ### 2. Build and Run
 
 **Option 1: Using Gradle (Recommended)**
+
 ```powershell
 # Compile the project
 .\gradlew build
@@ -34,21 +35,23 @@ The Swiss Ephemeris integration works out-of-the-box with no API keys or interne
 ```
 
 **Option 2: Direct Compilation (if Java is in PATH)**
+
 ```powershell
 # Compile to bin directory
-javac -d bin -cp src src\*.java
+javac -d bin -cp src\main\java src\main\java\*.java
 
 # Run the application
 java -cp bin EclipseSlider
 ```
 
 **Option 3: Using Batch Files (Easy Windows Setup)**
+
 ```powershell
 # Run the full application
-.\run.bat
+.\scripts\run.bat
 
 # Test just the Swiss Ephemeris integration
-.\test-api.bat
+.\scripts\test-api.bat
 ```
 
 **Option 4: Using Pre-compiled Classes**
@@ -62,30 +65,47 @@ java EclipseSlider
 
 Check that class files are present:
 ```powershell
-Get-ChildItem bin\*.class
+Get-ChildItem build\classes\java\main\*.class
 ```
 
 Expected output should include:
 - `EclipseSlider.class`
-- `EclipseSlider$1.class` 
-- `EclipseSlider$CirclePanel.class`
-- `EclipseSlider$Listener.class`
+- `EclipseSlider$MoonPhasePanel.class`
 - `MoonPhases.class`
+- `SimpleApiTest.class`
 
-✅ **Verification Status**: All required class files are present in your `bin` directory!
+✅ **Verification Status**: All required class files are present after running `.\gradlew build`!
 
 ## Project Structure
 
 ```
-src/
-├── EclipseSlider.java          # Main GUI application with lunar integration
-├── MoonPhases.java             # Swiss Ephemeris lunar calculations
-└── SimpleApiTest.java          # Swiss Ephemeris testing utility
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   ├── EclipseSlider.java     # Main GUI application with lunar integration
+│   │   │   ├── MoonPhases.java        # Swiss Ephemeris lunar calculations
+│   │   │   └── SimpleApiTest.java     # Swiss Ephemeris testing utility
+│   │   └── resources/
+│   │       ├── config.properties      # Application configuration
+│   │       └── config.properties.template # Configuration template
+│   └── test/
+│       ├── java/
+│       │   ├── MoonPhasesTest.java    # Unit tests for MoonPhases
+│       │   └── SwissEphemerisMoonPhasesTest.java # Integration tests
+│       └── resources/
+│           └── config.properties      # Test configuration
+├── build-tools/                       # Gradle distribution files
+├── docs/                              # Project documentation
+├── scripts/                           # Build and run scripts
+├── artifacts/                         # Compiled JAR files
+├── build.gradle                       # Gradle build configuration
+└── README.md                          # This file
 ```
 
 ## Swiss Ephemeris Features
 
 The application provides accurate astronomical calculations:
+
 - **Current Lunar Phase**: Real-time moon phase as percentage (0-100)
 - **Lunar Illumination**: Percentage of moon surface illuminated
 - **Phase Names**: New Moon, Waxing Crescent, First Quarter, etc.
@@ -95,7 +115,9 @@ The application provides accurate astronomical calculations:
 ## Usage Examples
 
 ### Real-time Lunar Data
+
 The application automatically:
+
 1. Calculates current lunar phase
 2. Sets the eclipse slider to match the moon phase
 3. Displays phase name and illumination percentage
@@ -104,11 +126,10 @@ The application automatically:
 ### Testing Swiss Ephemeris
 ```powershell
 # Test current calculations
-.\test-api.bat
+.\scripts\test-api.bat
 
-# Test specific date calculations
-cd bin
-java SimpleApiTest
+# Test specific date calculations using Gradle
+.\gradlew run -PmainClass=SimpleApiTest
 ```
 
 ## Troubleshooting
@@ -183,6 +204,7 @@ This application uses NASA's open data API. Learn more at [NASA Open Data Portal
 ## ✅ Project Status Verification
 
 ### Current Implementation Status
+
 - **✅ Secure API Key Management**: Fully implemented with template system
 - **✅ NASA APOD Integration**: Working with error handling and timeouts
 - **✅ Eclipse Simulation**: Interactive slider with real-time visual updates  
@@ -206,6 +228,7 @@ bin/
 ### Immediate Next Steps (Development & Testing)
 
 1. **Test the Application**
+
    ```powershell
    cd bin
    java EclipseSlider
@@ -215,6 +238,7 @@ bin/
    - Check console for NASA API data retrieval
 
 2. **Validate API Integration**
+
    ```powershell
    java MoonPhases  # Test standalone API calls
    ```
@@ -222,6 +246,7 @@ bin/
    - Verify no HTTP errors or connectivity issues
 
 3. **Test Different Scenarios**
+
    - Try running without internet connection
    - Test with invalid API key (temporarily modify config)
    - Test with different date parameters
@@ -229,17 +254,20 @@ bin/
 ### Enhancement Opportunities
 
 4. **Display NASA Data in GUI**
+
    - Parse JSON response to extract image URLs and descriptions
    - Add image display panel to show NASA's astronomy picture
    - Display astronomy facts alongside the eclipse simulation
 
 5. **Add Advanced Features**
+
    - Save favorite astronomy images locally
    - Add date picker to view historical NASA APOD data
    - Implement caching to reduce API calls
    - Add more celestial animations (moon phases, planetary alignments)
 
 6. **Improve User Experience**
+
    - Add tooltips explaining eclipse phases
    - Include educational content about eclipses
    - Add sound effects or animations
@@ -248,16 +276,19 @@ bin/
 ### Production Deployment
 
 7. **Package for Distribution**
+
    ```powershell
    .\gradlew jar  # Create executable JAR
    ```
 
 8. **Security Hardening**
+
    - Add `.gitignore` entry for `config.properties`
    - Consider environment variable support for API keys
    - Add input validation for user-provided dates
 
 9. **Testing & Quality Assurance**
+
    - Create unit tests for MoonPhases API calls
    - Add integration tests for GUI components
    - Performance testing with multiple API calls
@@ -265,16 +296,19 @@ bin/
 ### Advanced Development Paths
 
 10. **Cross-Platform Compatibility**
+
     - Test on different operating systems
     - Create platform-specific build scripts
     - Add native installers for Windows/Mac/Linux
 
 11. **Modern UI Enhancements**
+
     - Migrate to JavaFX for modern UI components
     - Add responsive design for different screen sizes
     - Implement dark/light theme switching
 
 12. **Data Integration Expansion**
+
     - Connect to additional astronomy APIs
     - Add real-time space weather data
     - Include ISS tracking information
