@@ -33,14 +33,20 @@ application {
 sourceSets {
     main {
         java {
-            srcDirs = ['src']
+            srcDirs = ['src/main/java']
+        }
+        resources {
+            srcDirs = ['src/main/resources']
         }
     }
-}
-
-// Custom task to compile to the bin directory (matching VS Code settings)
-compileJava {
-    destinationDirectory = file('bin')
+    test {
+        java {
+            srcDirs = ['src/test/java']
+        }
+        resources {
+            srcDirs = ['src/test/resources']
+        }
+    }
 }
 
 // Task to run the application
