@@ -1,85 +1,59 @@
 package com.nutrition.calculator.service;
 
 import com.nutrition.calculator.model.Recipe;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
+import java.util.*;
 
 /**
- * Simple in-memory implementation of RecipeService for testing without external dependencies.
- * This can be used while setting up the full JSON persistence later.
+ * In-memory implementation of RecipeService for MVP.
+ * Stores recipes in memory for the current session only.
  */
 public class InMemoryRecipeService implements RecipeService {
+    
     private final Map<String, Recipe> recipes;
     
     public InMemoryRecipeService() {
         this.recipes = new HashMap<>();
+        initializeWithSampleData();
     }
     
     @Override
     public boolean saveRecipe(Recipe recipe) {
-        if (recipe == null || !recipe.isValid()) {
-            return false;
+        if (recipe != null && recipe.getName() != null) {
+            recipes.put(recipe.getName(), recipe);
+            return true;
         }
-        recipes.put(recipe.getId(), recipe);
-        return true;
+        return false;
     }
     
     @Override
-    public Recipe loadRecipe(String id) {
-        return recipes.get(id);
-    }
-    
-    @Override
-    public List<Recipe> loadAllRecipes() {
+    public List<Recipe> getAllRecipes() {
         return new ArrayList<>(recipes.values());
     }
     
     @Override
-    public boolean deleteRecipe(String id) {
-        return recipes.remove(id) != null;
+    public Recipe findRecipeByName(String name) {
+        return recipes.get(name);
     }
     
     @Override
-    public List<Recipe> searchRecipesByName(String namePattern) {
-        if (namePattern == null || namePattern.trim().isEmpty()) {
-            return loadAllRecipes();
-        }
-        
-        String searchPattern = namePattern.toLowerCase().trim();
-        return recipes.values().stream()
-                .filter(recipe -> recipe.getName().toLowerCase().contains(searchPattern))
-                .collect(Collectors.toList());
+    public boolean deleteRecipe(String name) {
+        return recipes.remove(name) != null;
     }
     
     @Override
-    public RecipeStatistics getStatistics() {
-        List<Recipe> allRecipes = loadAllRecipes();
-        
-        if (allRecipes.isEmpty()) {
-            return new RecipeStatistics(0, 0, 0.0, 0.0, 0.0);
+    public boolean updateRecipe(Recipe recipe) {
+        if (recipe != null && recipe.getName() != null && recipes.containsKey(recipe.getName())) {
+            recipes.put(recipe.getName(), recipe);
+            return true;
         }
-        
-        int totalRecipes = allRecipes.size();
-        int totalIngredients = allRecipes.stream()
-                .mapToInt(Recipe::getIngredientCount)
-                .sum();
-        
-        double averageCaloriesPerRecipe = allRecipes.stream()
-                .mapToDouble(Recipe::getTotalCalories)
-                .average()
-                .orElse(0.0);
-        
-        double averageIngredientsPerRecipe = (double) totalIngredients / totalRecipes;
-        
-        double averageServingsPerRecipe = allRecipes.stream()
-                .mapToInt(Recipe::getServings)
-                .average()
-                .orElse(0.0);
-        
-        return new RecipeStatistics(totalRecipes, totalIngredients, 
-                averageCaloriesPerRecipe, averageIngredientsPerRecipe, averageServingsPerRecipe);
+        return false;
+    }
+    
+    /**
+     * Initialize with some sample recipes for demonstration
+     */
+    private void initializeWithSampleData() {
+        // Add sample recipes here if needed
+        // This keeps the service simple for now
     }
 }

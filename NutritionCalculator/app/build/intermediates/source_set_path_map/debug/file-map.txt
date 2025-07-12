@@ -1,0 +1,49 @@
+com.nutrition.calculator.app-transition-1.4.1-0 C:\Users\egeiger\.gradle\caches\8.8\transforms\098aa442285d39f0e857e4d34246b6cd\transformed\transition-1.4.1\res
+com.nutrition.calculator.app-coordinatorlayout-1.1.0-1 C:\Users\egeiger\.gradle\caches\8.8\transforms\10311ebe21dc28dbff58ec1878838606\transformed\coordinatorlayout-1.1.0\res
+com.nutrition.calculator.app-annotation-experimental-1.3.0-2 C:\Users\egeiger\.gradle\caches\8.8\transforms\129bafb49312f37becc1ee2bb7d165ab\transformed\annotation-experimental-1.3.0\res
+com.nutrition.calculator.app-material-1.10.0-3 C:\Users\egeiger\.gradle\caches\8.8\transforms\16e9ee6f6ff2fe1249bd690ad29eac2f\transformed\material-1.10.0\res
+com.nutrition.calculator.app-emoji2-1.2.0-4 C:\Users\egeiger\.gradle\caches\8.8\transforms\238307aa43eb2e01f5226ea1463f246f\transformed\emoji2-1.2.0\res
+com.nutrition.calculator.app-viewpager2-1.1.0-beta02-5 C:\Users\egeiger\.gradle\caches\8.8\transforms\28ebe848ebacaf257996b70eb1eba64b\transformed\viewpager2-1.1.0-beta02\res
+com.nutrition.calculator.app-savedstate-1.2.1-6 C:\Users\egeiger\.gradle\caches\8.8\transforms\379a55fe784a8a1c6498e5b64ca22dbd\transformed\savedstate-1.2.1\res
+com.nutrition.calculator.app-cardview-1.0.0-7 C:\Users\egeiger\.gradle\caches\8.8\transforms\408355c8fabe3fcdc02da63994c908e7\transformed\cardview-1.0.0\res
+com.nutrition.calculator.app-navigation-common-2.7.5-8 C:\Users\egeiger\.gradle\caches\8.8\transforms\4e298fafff1dd7a9b4ba3311b39280f8\transformed\navigation-common-2.7.5\res
+com.nutrition.calculator.app-activity-ktx-1.8.0-9 C:\Users\egeiger\.gradle\caches\8.8\transforms\4e6033f24f8e881e1cf48a9ab1ccf483\transformed\activity-ktx-1.8.0\res
+com.nutrition.calculator.app-core-runtime-2.2.0-10 C:\Users\egeiger\.gradle\caches\8.8\transforms\4ea8280def5b1077862df7a2b9ff6f73\transformed\core-runtime-2.2.0\res
+com.nutrition.calculator.app-profileinstaller-1.3.0-11 C:\Users\egeiger\.gradle\caches\8.8\transforms\52247065385fd514f733fa6996bdff90\transformed\profileinstaller-1.3.0\res
+com.nutrition.calculator.app-startup-runtime-1.1.1-12 C:\Users\egeiger\.gradle\caches\8.8\transforms\574c67c53e6aa085014af49254ed8aec\transformed\startup-runtime-1.1.1\res
+com.nutrition.calculator.app-lifecycle-runtime-ktx-2.7.0-13 C:\Users\egeiger\.gradle\caches\8.8\transforms\5a0f74a88f3f17f7e7d3f8e5e129b937\transformed\lifecycle-runtime-ktx-2.7.0\res
+com.nutrition.calculator.app-lifecycle-runtime-2.7.0-14 C:\Users\egeiger\.gradle\caches\8.8\transforms\5da90b0c5967730761729e2989b8be35\transformed\lifecycle-runtime-2.7.0\res
+com.nutrition.calculator.app-lifecycle-livedata-core-2.7.0-15 C:\Users\egeiger\.gradle\caches\8.8\transforms\6c7e6911403227a5c6d7bedfb58f14c6\transformed\lifecycle-livedata-core-2.7.0\res
+com.nutrition.calculator.app-lifecycle-livedata-2.7.0-16 C:\Users\egeiger\.gradle\caches\8.8\transforms\76b4f4a717b6880ddf9136830e126a2b\transformed\lifecycle-livedata-2.7.0\res
+com.nutrition.calculator.app-lifecycle-viewmodel-savedstate-2.7.0-17 C:\Users\egeiger\.gradle\caches\8.8\transforms\7dc81f1fd3b83714833aea3848b4d596\transformed\lifecycle-viewmodel-savedstate-2.7.0\res
+com.nutrition.calculator.app-drawerlayout-1.1.1-18 C:\Users\egeiger\.gradle\caches\8.8\transforms\81d4496f72e5eb42955fc6466380581c\transformed\drawerlayout-1.1.1\res
+com.nutrition.calculator.app-emoji2-views-helper-1.2.0-19 C:\Users\egeiger\.gradle\caches\8.8\transforms\8d50023389d9b37d69ac2f1f36b4471a\transformed\emoji2-views-helper-1.2.0\res
+com.nutrition.calculator.app-fragment-ktx-1.6.2-20 C:\Users\egeiger\.gradle\caches\8.8\transforms\92cd5187d63fb4dfc957a6c4fdd627de\transformed\fragment-ktx-1.6.2\res
+com.nutrition.calculator.app-savedstate-ktx-1.2.1-21 C:\Users\egeiger\.gradle\caches\8.8\transforms\931f43e1cbf99fb3d750e04a9683789a\transformed\savedstate-ktx-1.2.1\res
+com.nutrition.calculator.app-lifecycle-livedata-core-ktx-2.7.0-22 C:\Users\egeiger\.gradle\caches\8.8\transforms\965f055358cee7fa0fe07339eb51cd42\transformed\lifecycle-livedata-core-ktx-2.7.0\res
+com.nutrition.calculator.app-activity-1.8.0-23 C:\Users\egeiger\.gradle\caches\8.8\transforms\9674f8251d72a65b939f680caf7903bb\transformed\activity-1.8.0\res
+com.nutrition.calculator.app-sqlite-2.4.0-24 C:\Users\egeiger\.gradle\caches\8.8\transforms\9c6769dd4f4161360cf2b29911fdf99f\transformed\sqlite-2.4.0\res
+com.nutrition.calculator.app-recyclerview-1.3.2-25 C:\Users\egeiger\.gradle\caches\8.8\transforms\a0df820619731cfa4a5d7f78ca6344ad\transformed\recyclerview-1.3.2\res
+com.nutrition.calculator.app-window-1.0.0-26 C:\Users\egeiger\.gradle\caches\8.8\transforms\a2433d3f945267ada2a88581ad65669a\transformed\window-1.0.0\res
+com.nutrition.calculator.app-navigation-ui-2.7.5-27 C:\Users\egeiger\.gradle\caches\8.8\transforms\a880f332a7087c0c7017f986bc7f41d9\transformed\navigation-ui-2.7.5\res
+com.nutrition.calculator.app-sqlite-framework-2.4.0-28 C:\Users\egeiger\.gradle\caches\8.8\transforms\aa676816023474fc5e285448daea5f8a\transformed\sqlite-framework-2.4.0\res
+com.nutrition.calculator.app-appcompat-1.6.1-29 C:\Users\egeiger\.gradle\caches\8.8\transforms\b7bef858b9b82b8d144751d5842f6ad7\transformed\appcompat-1.6.1\res
+com.nutrition.calculator.app-navigation-runtime-2.7.5-30 C:\Users\egeiger\.gradle\caches\8.8\transforms\b9302f8e30f0b64f9b9d5f36f795fdbd\transformed\navigation-runtime-2.7.5\res
+com.nutrition.calculator.app-appcompat-resources-1.6.1-31 C:\Users\egeiger\.gradle\caches\8.8\transforms\b936a1d60e3f19e8e86905f544c5e1e2\transformed\appcompat-resources-1.6.1\res
+com.nutrition.calculator.app-constraintlayout-2.1.4-32 C:\Users\egeiger\.gradle\caches\8.8\transforms\bd804c05ad1f691d5b6dd79a134efa76\transformed\constraintlayout-2.1.4\res
+com.nutrition.calculator.app-fragment-1.6.2-33 C:\Users\egeiger\.gradle\caches\8.8\transforms\c0ee0e2602d139c89820e5d954e61115\transformed\fragment-1.6.2\res
+com.nutrition.calculator.app-room-runtime-2.6.1-34 C:\Users\egeiger\.gradle\caches\8.8\transforms\c5036e2f423f73895f434c51ca7535ed\transformed\room-runtime-2.6.1\res
+com.nutrition.calculator.app-core-1.9.0-35 C:\Users\egeiger\.gradle\caches\8.8\transforms\ce5a7f29f90a8c5866c9f7f6fe39efc2\transformed\core-1.9.0\res
+com.nutrition.calculator.app-slidingpanelayout-1.2.0-36 C:\Users\egeiger\.gradle\caches\8.8\transforms\d0d822c029b472c6bade244671d00769\transformed\slidingpanelayout-1.2.0\res
+com.nutrition.calculator.app-lifecycle-viewmodel-ktx-2.7.0-37 C:\Users\egeiger\.gradle\caches\8.8\transforms\d62f62ec615b8db946502587fc0bad47\transformed\lifecycle-viewmodel-ktx-2.7.0\res
+com.nutrition.calculator.app-lifecycle-process-2.7.0-38 C:\Users\egeiger\.gradle\caches\8.8\transforms\d8abd613622878d4024b607278518455\transformed\lifecycle-process-2.7.0\res
+com.nutrition.calculator.app-lifecycle-viewmodel-2.7.0-39 C:\Users\egeiger\.gradle\caches\8.8\transforms\d8acde129bf5bad675dd931b80720a34\transformed\lifecycle-viewmodel-2.7.0\res
+com.nutrition.calculator.app-navigation-fragment-2.7.5-40 C:\Users\egeiger\.gradle\caches\8.8\transforms\e5817e88d18ca4c6c6adb6e64bc28073\transformed\navigation-fragment-2.7.5\res
+com.nutrition.calculator.app-customview-poolingcontainer-1.0.0-41 C:\Users\egeiger\.gradle\caches\8.8\transforms\eb0d2d9191f5a60168b47083609a422a\transformed\customview-poolingcontainer-1.0.0\res
+com.nutrition.calculator.app-core-ktx-1.9.0-42 C:\Users\egeiger\.gradle\caches\8.8\transforms\faf85fd2635b0cd100e0bff1b335b464\transformed\core-ktx-1.9.0\res
+com.nutrition.calculator.app-resValues-43 C:\Users\egeiger\OneDrive - Ovintiv\Documents\GitHub\Java\NutritionCalculator\app\build\generated\res\resValues\debug
+com.nutrition.calculator.app-packageDebugResources-44 C:\Users\egeiger\OneDrive - Ovintiv\Documents\GitHub\Java\NutritionCalculator\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.nutrition.calculator.app-packageDebugResources-45 C:\Users\egeiger\OneDrive - Ovintiv\Documents\GitHub\Java\NutritionCalculator\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.nutrition.calculator.app-merged_res-46 C:\Users\egeiger\OneDrive - Ovintiv\Documents\GitHub\Java\NutritionCalculator\app\build\intermediates\merged_res\debug
+com.nutrition.calculator.app-debug-47 C:\Users\egeiger\OneDrive - Ovintiv\Documents\GitHub\Java\NutritionCalculator\app\src\debug\res
+com.nutrition.calculator.app-main-48 C:\Users\egeiger\OneDrive - Ovintiv\Documents\GitHub\Java\NutritionCalculator\app\src\main\res
