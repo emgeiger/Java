@@ -1,0 +1,173 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.nutrition.calculator.debug"
+4    android:versionCode="1"
+5    android:versionName="1.0-debug" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="24"
+9        android:targetSdkVersion="36" />
+10
+11    <!-- Permissions for enhanced features -->
+12    <uses-permission android:name="android.permission.INTERNET" />
+12-->C:\Users\egeiger\OneDrive - Ovintiv\Documents\GitHub\Java\NutritionCalculator\app\src\main\AndroidManifest.xml:6:5-67
+12-->C:\Users\egeiger\OneDrive - Ovintiv\Documents\GitHub\Java\NutritionCalculator\app\src\main\AndroidManifest.xml:6:22-64
+13    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+13-->C:\Users\egeiger\OneDrive - Ovintiv\Documents\GitHub\Java\NutritionCalculator\app\src\main\AndroidManifest.xml:7:5-79
+13-->C:\Users\egeiger\OneDrive - Ovintiv\Documents\GitHub\Java\NutritionCalculator\app\src\main\AndroidManifest.xml:7:22-76
+14    <uses-permission android:name="android.permission.CAMERA" />
+14-->C:\Users\egeiger\OneDrive - Ovintiv\Documents\GitHub\Java\NutritionCalculator\app\src\main\AndroidManifest.xml:8:5-65
+14-->C:\Users\egeiger\OneDrive - Ovintiv\Documents\GitHub\Java\NutritionCalculator\app\src\main\AndroidManifest.xml:8:22-62
+15
+16    <uses-feature
+16-->C:\Users\egeiger\OneDrive - Ovintiv\Documents\GitHub\Java\NutritionCalculator\app\src\main\AndroidManifest.xml:9:5-85
+17        android:name="android.hardware.camera"
+17-->C:\Users\egeiger\OneDrive - Ovintiv\Documents\GitHub\Java\NutritionCalculator\app\src\main\AndroidManifest.xml:9:19-57
+18        android:required="false" />
+18-->C:\Users\egeiger\OneDrive - Ovintiv\Documents\GitHub\Java\NutritionCalculator\app\src\main\AndroidManifest.xml:9:58-82
+19
+20    <permission
+20-->[androidx.core:core:1.9.0] C:\Users\egeiger\.gradle\caches\8.8\transforms\ce5a7f29f90a8c5866c9f7f6fe39efc2\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
+21        android:name="com.nutrition.calculator.debug.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+21-->[androidx.core:core:1.9.0] C:\Users\egeiger\.gradle\caches\8.8\transforms\ce5a7f29f90a8c5866c9f7f6fe39efc2\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
+22        android:protectionLevel="signature" />
+22-->[androidx.core:core:1.9.0] C:\Users\egeiger\.gradle\caches\8.8\transforms\ce5a7f29f90a8c5866c9f7f6fe39efc2\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
+23
+24    <uses-permission android:name="com.nutrition.calculator.debug.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+24-->[androidx.core:core:1.9.0] C:\Users\egeiger\.gradle\caches\8.8\transforms\ce5a7f29f90a8c5866c9f7f6fe39efc2\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
+24-->[androidx.core:core:1.9.0] C:\Users\egeiger\.gradle\caches\8.8\transforms\ce5a7f29f90a8c5866c9f7f6fe39efc2\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
+25
+26    <application
+26-->C:\Users\egeiger\OneDrive - Ovintiv\Documents\GitHub\Java\NutritionCalculator\app\src\main\AndroidManifest.xml:11:5-33:19
+27        android:name="com.nutrition.calculator.NutritionCalculatorApplication"
+27-->C:\Users\egeiger\OneDrive - Ovintiv\Documents\GitHub\Java\NutritionCalculator\app\src\main\AndroidManifest.xml:12:9-55
+28        android:allowBackup="true"
+28-->C:\Users\egeiger\OneDrive - Ovintiv\Documents\GitHub\Java\NutritionCalculator\app\src\main\AndroidManifest.xml:13:9-35
+29        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+29-->[androidx.core:core:1.9.0] C:\Users\egeiger\.gradle\caches\8.8\transforms\ce5a7f29f90a8c5866c9f7f6fe39efc2\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
+30        android:dataExtractionRules="@xml/data_extraction_rules"
+30-->C:\Users\egeiger\OneDrive - Ovintiv\Documents\GitHub\Java\NutritionCalculator\app\src\main\AndroidManifest.xml:14:9-65
+31        android:debuggable="true"
+32        android:extractNativeLibs="false"
+33        android:fullBackupContent="@xml/backup_rules"
+33-->C:\Users\egeiger\OneDrive - Ovintiv\Documents\GitHub\Java\NutritionCalculator\app\src\main\AndroidManifest.xml:15:9-54
+34        android:icon="@mipmap/ic_launcher"
+34-->C:\Users\egeiger\OneDrive - Ovintiv\Documents\GitHub\Java\NutritionCalculator\app\src\main\AndroidManifest.xml:16:9-43
+35        android:label="@string/app_name"
+35-->C:\Users\egeiger\OneDrive - Ovintiv\Documents\GitHub\Java\NutritionCalculator\app\src\main\AndroidManifest.xml:17:9-41
+36        android:roundIcon="@mipmap/ic_launcher_round"
+36-->C:\Users\egeiger\OneDrive - Ovintiv\Documents\GitHub\Java\NutritionCalculator\app\src\main\AndroidManifest.xml:18:9-54
+37        android:supportsRtl="true"
+37-->C:\Users\egeiger\OneDrive - Ovintiv\Documents\GitHub\Java\NutritionCalculator\app\src\main\AndroidManifest.xml:19:9-35
+38        android:theme="@style/Theme.NutritionCalculator" >
+38-->C:\Users\egeiger\OneDrive - Ovintiv\Documents\GitHub\Java\NutritionCalculator\app\src\main\AndroidManifest.xml:20:9-57
+39        <activity
+39-->C:\Users\egeiger\OneDrive - Ovintiv\Documents\GitHub\Java\NutritionCalculator\app\src\main\AndroidManifest.xml:23:9-31:20
+40            android:name="com.nutrition.calculator.MainActivity"
+40-->C:\Users\egeiger\OneDrive - Ovintiv\Documents\GitHub\Java\NutritionCalculator\app\src\main\AndroidManifest.xml:24:13-41
+41            android:exported="true"
+41-->C:\Users\egeiger\OneDrive - Ovintiv\Documents\GitHub\Java\NutritionCalculator\app\src\main\AndroidManifest.xml:25:13-36
+42            android:theme="@style/Theme.NutritionCalculator" >
+42-->C:\Users\egeiger\OneDrive - Ovintiv\Documents\GitHub\Java\NutritionCalculator\app\src\main\AndroidManifest.xml:26:13-61
+43            <intent-filter>
+43-->C:\Users\egeiger\OneDrive - Ovintiv\Documents\GitHub\Java\NutritionCalculator\app\src\main\AndroidManifest.xml:27:13-30:29
+44                <action android:name="android.intent.action.MAIN" />
+44-->C:\Users\egeiger\OneDrive - Ovintiv\Documents\GitHub\Java\NutritionCalculator\app\src\main\AndroidManifest.xml:28:17-69
+44-->C:\Users\egeiger\OneDrive - Ovintiv\Documents\GitHub\Java\NutritionCalculator\app\src\main\AndroidManifest.xml:28:25-66
+45
+46                <category android:name="android.intent.category.LAUNCHER" />
+46-->C:\Users\egeiger\OneDrive - Ovintiv\Documents\GitHub\Java\NutritionCalculator\app\src\main\AndroidManifest.xml:29:17-77
+46-->C:\Users\egeiger\OneDrive - Ovintiv\Documents\GitHub\Java\NutritionCalculator\app\src\main\AndroidManifest.xml:29:27-74
+47            </intent-filter>
+48        </activity>
+49
+50        <provider
+50-->[androidx.emoji2:emoji2:1.2.0] C:\Users\egeiger\.gradle\caches\8.8\transforms\238307aa43eb2e01f5226ea1463f246f\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+51            android:name="androidx.startup.InitializationProvider"
+51-->[androidx.emoji2:emoji2:1.2.0] C:\Users\egeiger\.gradle\caches\8.8\transforms\238307aa43eb2e01f5226ea1463f246f\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
+52            android:authorities="com.nutrition.calculator.debug.androidx-startup"
+52-->[androidx.emoji2:emoji2:1.2.0] C:\Users\egeiger\.gradle\caches\8.8\transforms\238307aa43eb2e01f5226ea1463f246f\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
+53            android:exported="false" >
+53-->[androidx.emoji2:emoji2:1.2.0] C:\Users\egeiger\.gradle\caches\8.8\transforms\238307aa43eb2e01f5226ea1463f246f\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
+54            <meta-data
+54-->[androidx.emoji2:emoji2:1.2.0] C:\Users\egeiger\.gradle\caches\8.8\transforms\238307aa43eb2e01f5226ea1463f246f\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+55                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+55-->[androidx.emoji2:emoji2:1.2.0] C:\Users\egeiger\.gradle\caches\8.8\transforms\238307aa43eb2e01f5226ea1463f246f\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
+56                android:value="androidx.startup" />
+56-->[androidx.emoji2:emoji2:1.2.0] C:\Users\egeiger\.gradle\caches\8.8\transforms\238307aa43eb2e01f5226ea1463f246f\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
+57            <meta-data
+57-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\egeiger\.gradle\caches\8.8\transforms\d8abd613622878d4024b607278518455\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:29:13-31:52
+58                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+58-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\egeiger\.gradle\caches\8.8\transforms\d8abd613622878d4024b607278518455\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:30:17-78
+59                android:value="androidx.startup" />
+59-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\egeiger\.gradle\caches\8.8\transforms\d8abd613622878d4024b607278518455\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:31:17-49
+60            <meta-data
+60-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\egeiger\.gradle\caches\8.8\transforms\52247065385fd514f733fa6996bdff90\transformed\profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
+61                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+61-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\egeiger\.gradle\caches\8.8\transforms\52247065385fd514f733fa6996bdff90\transformed\profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
+62                android:value="androidx.startup" />
+62-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\egeiger\.gradle\caches\8.8\transforms\52247065385fd514f733fa6996bdff90\transformed\profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
+63        </provider>
+64
+65        <uses-library
+65-->[androidx.window:window:1.0.0] C:\Users\egeiger\.gradle\caches\8.8\transforms\a2433d3f945267ada2a88581ad65669a\transformed\window-1.0.0\AndroidManifest.xml:25:9-27:40
+66            android:name="androidx.window.extensions"
+66-->[androidx.window:window:1.0.0] C:\Users\egeiger\.gradle\caches\8.8\transforms\a2433d3f945267ada2a88581ad65669a\transformed\window-1.0.0\AndroidManifest.xml:26:13-54
+67            android:required="false" />
+67-->[androidx.window:window:1.0.0] C:\Users\egeiger\.gradle\caches\8.8\transforms\a2433d3f945267ada2a88581ad65669a\transformed\window-1.0.0\AndroidManifest.xml:27:13-37
+68        <uses-library
+68-->[androidx.window:window:1.0.0] C:\Users\egeiger\.gradle\caches\8.8\transforms\a2433d3f945267ada2a88581ad65669a\transformed\window-1.0.0\AndroidManifest.xml:28:9-30:40
+69            android:name="androidx.window.sidecar"
+69-->[androidx.window:window:1.0.0] C:\Users\egeiger\.gradle\caches\8.8\transforms\a2433d3f945267ada2a88581ad65669a\transformed\window-1.0.0\AndroidManifest.xml:29:13-51
+70            android:required="false" />
+70-->[androidx.window:window:1.0.0] C:\Users\egeiger\.gradle\caches\8.8\transforms\a2433d3f945267ada2a88581ad65669a\transformed\window-1.0.0\AndroidManifest.xml:30:13-37
+71
+72        <service
+72-->[androidx.room:room-runtime:2.6.1] C:\Users\egeiger\.gradle\caches\8.8\transforms\c5036e2f423f73895f434c51ca7535ed\transformed\room-runtime-2.6.1\AndroidManifest.xml:24:9-28:63
+73            android:name="androidx.room.MultiInstanceInvalidationService"
+73-->[androidx.room:room-runtime:2.6.1] C:\Users\egeiger\.gradle\caches\8.8\transforms\c5036e2f423f73895f434c51ca7535ed\transformed\room-runtime-2.6.1\AndroidManifest.xml:25:13-74
+74            android:directBootAware="true"
+74-->[androidx.room:room-runtime:2.6.1] C:\Users\egeiger\.gradle\caches\8.8\transforms\c5036e2f423f73895f434c51ca7535ed\transformed\room-runtime-2.6.1\AndroidManifest.xml:26:13-43
+75            android:exported="false" />
+75-->[androidx.room:room-runtime:2.6.1] C:\Users\egeiger\.gradle\caches\8.8\transforms\c5036e2f423f73895f434c51ca7535ed\transformed\room-runtime-2.6.1\AndroidManifest.xml:27:13-37
+76
+77        <receiver
+77-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\egeiger\.gradle\caches\8.8\transforms\52247065385fd514f733fa6996bdff90\transformed\profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
+78            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+78-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\egeiger\.gradle\caches\8.8\transforms\52247065385fd514f733fa6996bdff90\transformed\profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
+79            android:directBootAware="false"
+79-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\egeiger\.gradle\caches\8.8\transforms\52247065385fd514f733fa6996bdff90\transformed\profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
+80            android:enabled="true"
+80-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\egeiger\.gradle\caches\8.8\transforms\52247065385fd514f733fa6996bdff90\transformed\profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
+81            android:exported="true"
+81-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\egeiger\.gradle\caches\8.8\transforms\52247065385fd514f733fa6996bdff90\transformed\profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
+82            android:permission="android.permission.DUMP" >
+82-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\egeiger\.gradle\caches\8.8\transforms\52247065385fd514f733fa6996bdff90\transformed\profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
+83            <intent-filter>
+83-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\egeiger\.gradle\caches\8.8\transforms\52247065385fd514f733fa6996bdff90\transformed\profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
+84                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+84-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\egeiger\.gradle\caches\8.8\transforms\52247065385fd514f733fa6996bdff90\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
+84-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\egeiger\.gradle\caches\8.8\transforms\52247065385fd514f733fa6996bdff90\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
+85            </intent-filter>
+86            <intent-filter>
+86-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\egeiger\.gradle\caches\8.8\transforms\52247065385fd514f733fa6996bdff90\transformed\profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
+87                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+87-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\egeiger\.gradle\caches\8.8\transforms\52247065385fd514f733fa6996bdff90\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
+87-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\egeiger\.gradle\caches\8.8\transforms\52247065385fd514f733fa6996bdff90\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
+88            </intent-filter>
+89            <intent-filter>
+89-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\egeiger\.gradle\caches\8.8\transforms\52247065385fd514f733fa6996bdff90\transformed\profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
+90                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+90-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\egeiger\.gradle\caches\8.8\transforms\52247065385fd514f733fa6996bdff90\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
+90-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\egeiger\.gradle\caches\8.8\transforms\52247065385fd514f733fa6996bdff90\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
+91            </intent-filter>
+92            <intent-filter>
+92-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\egeiger\.gradle\caches\8.8\transforms\52247065385fd514f733fa6996bdff90\transformed\profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
+93                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+93-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\egeiger\.gradle\caches\8.8\transforms\52247065385fd514f733fa6996bdff90\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
+93-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\egeiger\.gradle\caches\8.8\transforms\52247065385fd514f733fa6996bdff90\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
+94            </intent-filter>
+95        </receiver>
+96    </application>
+97
+98</manifest>

@@ -42,7 +42,7 @@ public class NutritionCalculatorGUI extends JFrame {
     }
     
     private void initializeUI() {
-        setTitle("🥗 Nutrition Calculator - MVP");
+        setTitle("Nutrition Calculator - MVP");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
         
@@ -382,7 +382,7 @@ public class NutritionCalculatorGUI extends JFrame {
     
     private void loadSavedRecipes() {
         recipeListModel.clear();
-        List<Recipe> recipes = recipeService.loadAllRecipes();
+        List<Recipe> recipes = recipeService.getAllRecipes();
         for (Recipe recipe : recipes) {
             recipeListModel.addElement(recipe);
         }

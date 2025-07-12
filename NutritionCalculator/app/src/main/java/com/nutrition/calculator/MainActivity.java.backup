@@ -1,0 +1,82 @@
+package com.nutrition.calculator;
+
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.nutrition.calculator.databinding.ActivityMainBinding;
+
+/**
+ * Main Activity for the Nutrition Calculator Android App.
+ * Replaces the Swing GUI with modern Android Material Design.
+ */
+public class MainActivity extends AppCompatActivity {
+
+    private AppBarConfiguration appBarConfiguration;
+    private ActivityMainBinding binding;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
+        setSupportActionBar(binding.toolbar);
+
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
+        appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
+        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+
+        // Floating Action Button for adding new recipes
+        FloatingActionButton fab = binding.fab;
+        fab.setOnClickListener(view -> {
+            // Navigate to add recipe fragment
+            NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
+            Bundle bundle = new Bundle();
+            bundle.putBoolean("edit_mode", false);
+            navController.navigate(R.id.action_FirstFragment_to_SecondFragment, bundle);
+        });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here.
+        int id = item.getItemId();
+
+        if (id == R.id.action_settings) {
+            Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show();
+            return true;
+        } else if (id == R.id.action_export) {
+            Toast.makeText(this, "Export Recipes", Toast.LENGTH_SHORT).show();
+            return true;
+        } else if (id == R.id.action_import) {
+            Toast.makeText(this, "Import Recipes", Toast.LENGTH_SHORT).show();
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
+        return NavigationUI.navigateUp(navController, appBarConfiguration)
+                || super.onSupportNavigateUp();
+    }
+}
