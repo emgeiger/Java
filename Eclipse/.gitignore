@@ -3,6 +3,11 @@
 /bin/
 /build/
 
+# Build tools and distributions (prevents large files)
+/build-tools/
+gradle-*-bin.zip
+gradle-*-all.zip
+
 # Configuration files with sensitive data
 src/config.properties
 config.properties
