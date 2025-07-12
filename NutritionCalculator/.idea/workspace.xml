@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a0bc8f6f-ef26-4ed0-bc9b-efbe606eae1b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Eclipse/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Eclipse/.vscode/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eclipse/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../Eclipse/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eclipse/docs/BUILD_VERIFICATION.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eclipse/docs/ENHANCED_GUI_INTEGRATION.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eclipse/docs/FINAL_BUILD_REPORT.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eclipse/docs/GUI_INTEGRATION_COMPLETE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eclipse/docs/JAVA_SETUP.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eclipse/docs/MARKDOWN_STYLE_GUIDE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eclipse/docs/PROJECT_STATUS.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eclipse/docs/REAL_TIME_GUI_STATUS.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eclipse/docs/SINGLE_LOAD_UPDATE_COMPLETE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eclipse/docs/SWISS_EPHEMERIS_MIGRATION.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eclipse/docs/VS_CODE_SETUP.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eclipse/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eclipse/src/EclipseSlider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eclipse/src/MoonPhases.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eclipse/src/main/java/EclipseSlider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eclipse/src/main/java/MoonPhases.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eclipse/src/main/java/SimpleApiTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eclipse/src/main/resources/config.properties.template" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GraphicalCylinder/src/CylinderTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GraphicalCylinder/src/EnhancedGraphicalCylinder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GraphicalCylinder/src/GraphicalCylinderTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GraphicalCylinder/src/main/java/com/cylinder/graphics/Cylinder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GraphicalCylinder/src/main/java/com/cylinder/graphics/EnhancedGraphicalCylinder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GraphicalCylinder/src/main/java/com/cylinder/graphics/GraphicalCylinder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/instructions/Copilot-Kotlin-JetpackCompose.instructions.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.1.1/checksums/checksums.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.1.1/fileChanges/last-build.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.1.1/fileHashes/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.1.1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/checksums/checksums.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/checksums/md5-checksums.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/checksums/sha1-checksums.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileChanges/last-build.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/resourceHashesCache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.0-milestone-1/checksums/checksums.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.0-milestone-1/checksums/md5-checksums.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.0-milestone-1/checksums/sha1-checksums.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.0-milestone-1/fileChanges/last-build.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.0-milestone-1/fileHashes/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.0-milestone-1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/config.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/vcs-1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/AndroidProjectSystem.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/migrations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ANDROID_COMPLETE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ANDROID_MIGRATION.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/APK_BUILD_READY.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BUILD_CLEANUP_SUMMARY.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Build-APK-Simple.ps1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Build-APK.ps1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CODE_REFERENCES_CLEAN.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEPRECATION_WARNINGS_FIXED.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ENHANCED_DESIGN.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ENHANCED_SUMMARY.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ENHANCEMENT_CONFIG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GRADLE_9_COMPATIBILITY.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IMPLEMENTATION_PLAN.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MIGRATION_COMPLETE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PROJECT_STRUCTURE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/QUICK_START_NEXT.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UNIT_TESTING_GUIDE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/annotation_processor_list/debug/annotationProcessors.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/app_metadata/debug/app-metadata.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/compatible_screen_manifest/debug/output-metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/data_binding_layout_info_type_merge/debug/out/activity_main-layout.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/data_binding_layout_info_type_merge/debug/out/content_main-layout.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/data_binding_layout_info_type_merge/debug/out/fragment_recipe_detail-layout.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/data_binding_layout_info_type_merge/debug/out/fragment_recipe_list-layout.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/data_binding_layout_info_type_merge/debug/out/item_recipe-layout.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/data_binding_layout_info_type_package/debug/out/activity_main-layout.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/data_binding_layout_info_type_package/debug/out/content_main-layout.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/data_binding_layout_info_type_package/debug/out/fragment_recipe_detail-layout.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/data_binding_layout_info_type_package/debug/out/fragment_recipe_list-layout.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/data_binding_layout_info_type_package/debug/out/item_recipe-layout.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debug/mergeDebugResources/compile-file-map.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-af/values-af.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-am/values-am.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ar/values-ar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-as/values-as.xml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2zfDjdPqykt7xLAs5TqQPnt7O1d" />
+  <component name="ProjectReloadState">
+    <option name="STATE" value="1" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "android.gradle.sync.needed": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "feature/rotational-rhythm-enhanced",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/egeiger/OneDrive - Ovintiv/Documents/GitHub/Java/NutritionCalculator"
+  }
+}]]></component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a0bc8f6f-ef26-4ed0-bc9b-efbe606eae1b" name="Changes" comment="" />
+      <created>1752113370779</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1752113370779</updated>
+    </task>
+    <servers />
+  </component>
+</project>
