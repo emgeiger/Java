@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="md_theme_dark_background">#0F0F0F</color>
+    <color name="md_theme_dark_onBackground">#E1E1E1</color>
+    <color name="md_theme_dark_onPrimary">#003300</color>
+    <color name="md_theme_dark_onPrimaryContainer">#A5D6A7</color>
+    <color name="md_theme_dark_onSecondary">#4E2700</color>
+    <color name="md_theme_dark_onSecondaryContainer">#FFE0B2</color>
+    <color name="md_theme_dark_onSurface">#E1E1E1</color>
+    <color name="md_theme_dark_onSurfaceVariant">#C4C4C4</color>
+    <color name="md_theme_dark_primary">#4CAF50</color>
+    <color name="md_theme_dark_primaryContainer">#1B5E20</color>
+    <color name="md_theme_dark_secondary">#FFB74D</color>
+    <color name="md_theme_dark_secondaryContainer">#E65100</color>
+    <color name="md_theme_dark_surface">#121212</color>
+    <color name="md_theme_dark_surfaceVariant">#2C2C2C</color>
+    <style name="Theme.NutritionCalculator" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        <item name="colorPrimary">@color/md_theme_dark_primary</item>
+        <item name="colorOnPrimary">@color/md_theme_dark_onPrimary</item>
+        <item name="colorPrimaryContainer">@color/md_theme_dark_primaryContainer</item>
+        <item name="colorOnPrimaryContainer">@color/md_theme_dark_onPrimaryContainer</item>
+        
+        
+        <item name="colorSecondary">@color/md_theme_dark_secondary</item>
+        <item name="colorOnSecondary">@color/md_theme_dark_onSecondary</item>
+        <item name="colorSecondaryContainer">@color/md_theme_dark_secondaryContainer</item>
+        <item name="colorOnSecondaryContainer">@color/md_theme_dark_onSecondaryContainer</item>
+        
+        
+        <item name="colorSurface">@color/md_theme_dark_surface</item>
+        <item name="colorOnSurface">@color/md_theme_dark_onSurface</item>
+        <item name="colorSurfaceVariant">@color/md_theme_dark_surfaceVariant</item>
+        <item name="colorOnSurfaceVariant">@color/md_theme_dark_onSurfaceVariant</item>
+        
+        
+        <item name="android:colorBackground">@color/md_theme_dark_background</item>
+        <item name="colorOnBackground">@color/md_theme_dark_onBackground</item>
+        
+        
+        <item name="android:statusBarColor">?attr/colorSurface</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+</resources>

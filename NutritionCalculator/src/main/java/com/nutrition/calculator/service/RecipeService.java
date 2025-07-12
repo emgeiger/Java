@@ -1,52 +1,36 @@
 package com.nutrition.calculator.service;
 
 import com.nutrition.calculator.model.Recipe;
-import com.nutrition.calculator.model.Ingredient;
 import java.util.List;
 
 /**
- * Service interface for recipe management operations.
- * Designed for easy testing and future Android/Kotlin compatibility.
+ * Service interface for managing recipes.
+ * Designed for easy swapping between in-memory and persistent storage.
  */
 public interface RecipeService {
     
     /**
-     * Save a recipe to persistent storage
-     * @param recipe The recipe to save
-     * @return true if saved successfully
+     * Save a recipe to storage
      */
     boolean saveRecipe(Recipe recipe);
     
     /**
-     * Load a recipe by ID
-     * @param id The recipe ID
-     * @return The recipe, or null if not found
+     * Get all saved recipes
      */
-    Recipe loadRecipe(String id);
+    List<Recipe> getAllRecipes();
     
     /**
-     * Load all saved recipes
-     * @return List of all recipes
+     * Find a recipe by name
      */
-    List<Recipe> loadAllRecipes();
+    Recipe findRecipeByName(String name);
     
     /**
      * Delete a recipe
-     * @param id The recipe ID to delete
-     * @return true if deleted successfully
      */
-    boolean deleteRecipe(String id);
+    boolean deleteRecipe(String name);
     
     /**
-     * Search recipes by name
-     * @param namePattern Pattern to search for (case-insensitive)
-     * @return List of matching recipes
+     * Update an existing recipe
      */
-    List<Recipe> searchRecipesByName(String namePattern);
-    
-    /**
-     * Get recipe statistics
-     * @return Statistics about saved recipes
-     */
-    RecipeStatistics getStatistics();
+    boolean updateRecipe(Recipe recipe);
 }
