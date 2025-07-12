@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data-extraction-rules>
+    <cloud-backup>
+        <!-- Include user recipes and preferences -->
+        <include domain="database" />
+        <include domain="shared_preference" />
+    </cloud-backup>
+    
+    <device-transfer>
+        <!-- Include all user data for device transfer -->
+        <include domain="database" />
+        <include domain="shared_preference" />
+    </device-transfer>
+</data-extraction-rules>

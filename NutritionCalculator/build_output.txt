@@ -1,0 +1,33 @@
+Initialized native services in: C:\Users\egeiger\.gradle\native
+Initialized jansi services in: C:\Users\egeiger\.gradle\native
+Received JVM installation metadata from 'C:\Program Files\Microsoft\jdk-21.0.7.6-hotspot': {JAVA_HOME=C:\Program Files\Microsoft\jdk-21.0.7.6-hotspot, JAVA_VERSION=21.0.7, JAVA_VENDOR=Microsoft, RUNTIME_NAME=OpenJDK Runtime Environment, RUNTIME_VERSION=21.0.7+6-LTS, VM_NAME=OpenJDK 64-Bit Server VM, VM_VERSION=21.0.7+6-LTS, VM_VENDOR=Microsoft, OS_ARCH=amd64}
+Checking if the launcher JVM can be re-used for build. To be re-used, the launcher JVM needs to match the parameters required for the build process: --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.prefs/java.util.prefs=ALL-UNNAMED --add-opens=java.base/java.nio.charset=ALL-UNNAMED --add-opens=java.base/java.net=ALL-UNNAMED --add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED -Xmx2048m -Dfile.encoding=UTF-8 -Duser.country=US -Duser.language=en -Duser.variant
+To honour the JVM settings for this build a single-use Daemon process will be forked. See https://docs.gradle.org/8.1.1/userguide/gradle_daemon.html#sec:disabling_the_daemon.
+Starting process 'Gradle build daemon'. Working directory: C:\Users\egeiger\.gradle\daemon\8.1.1 Command: C:\Program Files\Microsoft\jdk-21.0.7.6-hotspot\bin\java.exe --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.prefs/java.util.prefs=ALL-UNNAMED --add-opens=java.base/java.nio.charset=ALL-UNNAMED --add-opens=java.base/java.net=ALL-UNNAMED --add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED -Xmx2048m -Dfile.encoding=UTF-8 -Djavax.net.ssl.trustStore=NONE -Djavax.net.ssl.trustStoreType=Windows-ROOT -Duser.country=US -Duser.language=en -Duser.variant -cp C:\Users\egeiger\.gradle\wrapper\dists\gradle-8.1.1-bin\9wiye5v2saajue4irfo8ybqfp\gradle-8.1.1\lib\gradle-launcher-8.1.1.jar -javaagent:C:\Users\egeiger\.gradle\wrapper\dists\gradle-8.1.1-bin\9wiye5v2saajue4irfo8ybqfp\gradle-8.1.1\lib\agents\gradle-instrumentation-agent-8.1.1.jar org.gradle.launcher.daemon.bootstrap.GradleDaemon 8.1.1
+Successfully started process 'Gradle build daemon'
+An attempt to start the daemon took 2.007 secs.
+The client will now receive all logging from the daemon (pid: 32840). The daemon log file: C:\Users\egeiger\.gradle\daemon\8.1.1\daemon-32840.out.log
+Daemon will be stopped at the end of the build 
+Using 20 worker leases.
+Received JVM installation metadata from 'C:\Program Files\Microsoft\jdk-21.0.7.6-hotspot': {JAVA_HOME=C:\Program Files\Microsoft\jdk-21.0.7.6-hotspot, JAVA_VERSION=21.0.7, JAVA_VENDOR=Microsoft, RUNTIME_NAME=OpenJDK Runtime Environment, RUNTIME_VERSION=21.0.7+6-LTS, VM_NAME=OpenJDK 64-Bit Server VM, VM_VERSION=21.0.7+6-LTS, VM_VENDOR=Microsoft, OS_ARCH=amd64}
+Watching the file system is configured to be enabled if available
+Now considering [C:\Users\egeiger\OneDrive - Ovintiv\Documents\GitHub\Java\NutritionCalculator] as hierarchies to watch
+File system watching is active
+Starting Build
+Compiling settings file 'C:\Users\egeiger\OneDrive - Ovintiv\Documents\GitHub\Java\NutritionCalculator\settings.gradle' using SubsetScriptTransformer.
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Could not open cp_settings generic class cache for settings file 'C:\Users\egeiger\OneDrive - Ovintiv\Documents\GitHub\Java\NutritionCalculator\settings.gradle' (C:\Users\egeiger\.gradle\caches\8.1.1\scripts\3es2zg7clhvp3shzy09xo50km).
+> BUG! exception in phase 'semantic analysis' in source unit '_BuildScript_' Unsupported class file major version 65
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --debug option to get more log output.
+> Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 6s
+Watched directory hierarchies: []
