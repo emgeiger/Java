@@ -205,7 +205,7 @@ This project is provided as-is for educational purposes.
 
 ## API Credits
 
-This application uses NASA's open data API. Learn more at [NASA Open Data Portal](https://api.nasa.gov/).
+This application uses Swiss Ephemeris for accurate astronomical calculations. Learn more at [Swiss Ephemeris](https://www.astro.com/swisseph/).
 
 ---
 
