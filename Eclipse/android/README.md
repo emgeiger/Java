@@ -40,7 +40,7 @@ The custom `MoonPhaseVisualization` composable provides:
 - Minimum SDK: API 24 (Android 7.0)
 - Target SDK: API 34 (Android 14)
 - Kotlin 1.9.22+
-- Gradle 8.2.2+
+- Gradle 8.10.2+
 
 ## Dependencies
 
