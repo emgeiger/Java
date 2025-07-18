@@ -39,6 +39,34 @@ git pull origin {PRIMARY_BRANCH}
 git push origin {PRIMARY_BRANCH}
 ```
 
+### GitHub CLI Integration
+
+```bash
+# View repository information
+gh repo view {USERNAME}/{REPOSITORY_NAME}
+
+# Create feature branch and PR
+gh pr create --title "{PROJECT_NAME}: Add new feature" --body "Feature description" --base {PRIMARY_BRANCH}
+
+# View project-related issues
+gh issue list --label "{PROJECT_NAME}"
+
+# Create project specific issue
+gh issue create --title "{PROJECT_NAME}: Issue title" --body "Issue description" --label "{PROJECT_NAME},bug"
+
+# Check branch status
+gh pr status --branch {PRIMARY_BRANCH}
+
+# Merge PR
+gh pr merge --merge --delete-branch
+
+# Release management
+gh release create v1.0.0 --title "{PROJECT_NAME} v1.0.0" --notes "Release notes"
+
+# Repository analytics
+gh repo view {USERNAME}/{REPOSITORY_NAME} --json languages
+```
+
 ## Build Configuration ⚠️ CRITICAL
 
 ### Version Compatibility Requirements
