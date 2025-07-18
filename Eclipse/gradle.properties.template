@@ -1,0 +1,61 @@
+# Modern Gradle Configuration for Swiss Ephemeris Lunar Monitor
+# Template file - DO NOT include sensitive corporate information
+
+# Java Configuration - Updated for Java 17/21 compatibility
+# org.gradle.java.home=C:\\Program Files\\Microsoft\\jdk-21.0.7.6-hotspot
+# systemProp.java.home=C:\\Program Files\\Microsoft\\jdk-21.0.7.6-hotspot
+
+# Gradle Performance and Features
+org.gradle.daemon=true
+org.gradle.parallel=true
+org.gradle.caching=true
+org.gradle.configuration-cache=true
+org.gradle.vfs.watch=true
+
+# Memory Settings - Optimized for modern builds
+org.gradle.jvmargs=-Xmx4g -XX:+UseG1GC -XX:+UseStringDeduplication -XX:MaxMetaspaceSize=512m
+
+# Gradle Wrapper Configuration
+distributionUrl=https://services.gradle.org/distributions/gradle-8.11.1-all.zip
+
+# Android Configuration (for multi-module support)
+android.useAndroidX=true
+android.enableJetifier=true
+android.enableR8=true
+android.enableR8.fullMode=true
+
+# Corporate Network Settings - TEMPLATE (Fill in your values)
+# systemProp.https.nonProxyHosts=localhost|127.*|[::1]|*.local|*.yourcompany.com
+# systemProp.http.nonProxyHosts=localhost|127.*|[::1]|*.local|*.yourcompany.com
+
+# SSL Configuration for Corporate Networks - TEMPLATE
+# systemProp.javax.net.ssl.trustStore=NONE
+# systemProp.javax.net.ssl.trustStoreType=Windows-ROOT
+# systemProp.com.sun.net.ssl.checkRevocation=false
+# systemProp.trust_all_cert=true
+# systemProp.javax.net.ssl.trustStorePassword=
+# systemProp.java.net.useSystemProxies=true
+
+# Network Timeouts
+systemProp.sun.net.client.defaultConnectTimeout=60000
+systemProp.sun.net.client.defaultReadTimeout=60000
+
+# Build Performance
+org.gradle.workers.max=4
+org.gradle.console=rich
+
+# Project Configuration
+project.version=1.0.0
+project.group=com.emgeiger
+
+# Swiss Ephemeris Configuration
+swisseph.data.path=data
+swisseph.lib.path=lib
+
+# Build Configuration
+build.cache.enabled=true
+build.scan.enabled=false
+
+# Testing Configuration
+test.parallel=true
+test.maxParallelForks=4
