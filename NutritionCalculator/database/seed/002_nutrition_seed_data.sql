@@ -38,8 +38,6 @@ INSERT INTO food_categories (id, name, description, color_hex, parent_category_i
 
 -- Subcategories for Proteins
 INSERT INTO food_categories (id, name, description, color_hex, parent_category_id) VALUES
-('550e8400-e29b-41d4-a716-446655440017', 'Poultry', 'Chicken, turkey, duck', '#FFB74D', '550e8400-e29b-41d4-a716-446655440004'),
-('550e8400-e29b-41d4-a716-446655440018', 'Seafood', 'Fish, shrimp, shellfish', '#4FC3F7', '550e8400-e29b-41d4-a716-446655440004'),
 ('550e8400-e29b-41d4-a716-446655440019', 'Plant Proteins', 'Beans, lentils, tofu, tempeh', '#81C784', '550e8400-e29b-41d4-a716-446655440004');
 
 -- ==================================================
@@ -112,14 +110,6 @@ INSERT INTO foods (id, name, category_id, serving_size, serving_unit, calories, 
 -- Proteins
 INSERT INTO foods (id, name, category_id, brand_id, serving_size, serving_unit, calories, protein_g, carbohydrates_g, total_fat_g, saturated_fat_g, cholesterol_mg, sodium_mg, data_source, verified) VALUES
 
--- Poultry
-('550e8400-e29b-41d4-a716-446655443016', 'Chicken Breast, skinless', '550e8400-e29b-41d4-a716-446655440017', '550e8400-e29b-41d4-a716-446655441006', 100, 'g', 165, 31.0, 0, 3.6, 1.0, 85, 74, 'USDA', true),
-('550e8400-e29b-41d4-a716-446655443017', 'Ground Turkey, 93% lean', '550e8400-e29b-41d4-a716-446655440017', '550e8400-e29b-41d4-a716-446655441006', 100, 'g', 135, 24.0, 0, 4.5, 1.2, 85, 65, 'USDA', true),
-
--- Seafood
-('550e8400-e29b-41d4-a716-446655443018', 'Salmon, Atlantic', '550e8400-e29b-41d4-a716-446655440018', NULL, 100, 'g', 208, 25.4, 0, 12.4, 3.0, 59, 59, 'USDA', true),
-('550e8400-e29b-41d4-a716-446655443019', 'Tuna, canned in water', '550e8400-e29b-41d4-a716-446655440018', NULL, 100, 'g', 116, 25.5, 0, 0.8, 0.2, 42, 247, 'USDA', true),
-
 -- Plant Proteins
 ('550e8400-e29b-41d4-a716-446655443020', 'Black Beans, cooked', '550e8400-e29b-41d4-a716-446655440019', NULL, 100, 'g', 132, 8.9, 23.7, 8.7, 0.5, 0, 2, 'USDA', true),
 ('550e8400-e29b-41d4-a716-446655443021', 'Quinoa, cooked', '550e8400-e29b-41d4-a716-446655440003', NULL, 100, 'g', 120, 4.4, 21.8, 2.8, 1.9, 0, 13, 'USDA', true),
@@ -171,27 +161,50 @@ INSERT INTO recipe_ingredients (recipe_id, food_id, quantity, unit, sort_order) 
 ('550e8400-e29b-41d4-a716-446655444001', '550e8400-e29b-41d4-a716-446655443005', 75, 'g', 3), -- Blueberries
 ('550e8400-e29b-41d4-a716-446655444001', '550e8400-e29b-41d4-a716-446655443004', 50, 'g', 4); -- Strawberries
 
--- Insert a sample dinner recipe
+-- Insert Plant Chicken Al Pastor Tacos recipe
 INSERT INTO recipes (id, name, description, category_id, prep_time_minutes, cook_time_minutes, servings, difficulty_level, instructions, tags, dietary_tags, is_public) VALUES
-('550e8400-e29b-41d4-a716-446655444002', 'Grilled Chicken with Sweet Potato', 'Healthy grilled chicken breast with roasted sweet potato and steamed broccoli', '550e8400-e29b-41d4-a716-446655442003', 15, 25, 4, 'medium',
+('550e8400-e29b-41d4-a716-446655444002', 'Plant Chicken Al Pastor Tacos', 'Plant-based twist on a Mexican classic with smoky-sweet chipotle and pineapple marinade, juicy plant chicken pieces, and zesty homemade pineapple salsa', '550e8400-e29b-41d4-a716-446655442003', 15, 10, 3, 'medium',
 '[
-  {"step": 1, "text": "Preheat grill to medium-high heat", "time_minutes": 5},
-  {"step": 2, "text": "Season chicken breasts with salt, pepper, and herbs", "time_minutes": 3},
-  {"step": 3, "text": "Cube sweet potatoes and toss with olive oil", "time_minutes": 5},
-  {"step": 4, "text": "Roast sweet potatoes at 400°F for 20 minutes", "time_minutes": 20},
-  {"step": 5, "text": "Grill chicken for 6-7 minutes per side", "time_minutes": 15},
-  {"step": 6, "text": "Steam broccoli for 5 minutes", "time_minutes": 5},
-  {"step": 7, "text": "Let chicken rest 5 minutes before slicing", "time_minutes": 5}
+  {"step": 1, "text": "Make the marinade: combine olive oil, pineapple juice, vinegar, chipotle peppers, adobo sauce, brown sugar, chili powder, smoked paprika, cumin, oregano, cinnamon, garlic, salt and pepper in a jar or small blender. Blend until smooth.", "time_minutes": 5},
+  {"step": 2, "text": "Cook the plant chicken: Heat olive oil in a pan over medium heat. Add the plant chicken pieces, onion, and pineapple. Stir to coat everything in the oil and cook for 5-6 minutes, stirring frequently.", "time_minutes": 6},
+  {"step": 3, "text": "Add marinade: When the plant chicken is almost done, lower the heat and add the marinade. Stir and cook for an additional 2 minutes.", "time_minutes": 2},
+  {"step": 4, "text": "Make the pineapple salsa: In a small bowl, combine the chopped pineapple, jalapeño, red onion, cilantro, and lime juice. Season with salt to taste.", "time_minutes": 3},
+  {"step": 5, "text": "Warm tortillas: Heat tortillas in a dry skillet or on a griddle until soft and slightly browned.", "time_minutes": 2},
+  {"step": 6, "text": "Assemble tacos: Spread vegan sour cream on tortillas (optional). Add generous portion of plant chicken mixture. Top with pineapple salsa and serve with lime wedges.", "time_minutes": 3}
 ]',
-'["dinner", "grilled", "healthy", "protein"]',
-'["gluten-free", "dairy-free"]',
+'["tacos", "mexican", "plant-based", "al-pastor", "pineapple", "dinner"]',
+'["vegan", "dairy-free", "plant-based"]',
 true);
 
--- Insert recipe ingredients for the chicken dinner
-INSERT INTO recipe_ingredients (recipe_id, food_id, quantity, unit, sort_order, ingredient_group) VALUES
-('550e8400-e29b-41d4-a716-446655444002', '550e8400-e29b-41d4-a716-446655443016', 600, 'g', 1, 'Protein'), -- Chicken breast
-('550e8400-e29b-41d4-a716-446655444002', '550e8400-e29b-41d4-a716-446655443014', 400, 'g', 2, 'Vegetables'), -- Sweet potato
-('550e8400-e29b-41d4-a716-446655444002', '550e8400-e29b-41d4-a716-446655443016', 300, 'g', 3, 'Vegetables'); -- Would be broccoli (not in our seed data)
+-- Insert recipe ingredients for the Plant Chicken Al Pastor Tacos
+-- Note: Using existing foods from seed data where possible, some ingredients may need to be added separately
+INSERT INTO recipe_ingredients (recipe_id, food_id, quantity, unit, sort_order, ingredient_group, notes) VALUES
+-- Marinade ingredients
+('550e8400-e29b-41d4-a716-446655444002', NULL, 2, 'tbsp', 1, 'Marinade', 'Olive oil - needs food entry'),
+('550e8400-e29b-41d4-a716-446655444002', '550e8400-e29b-41d4-a716-446655443009', 60, 'ml', 2, 'Marinade', 'Pineapple juice (from pineapple)'),
+('550e8400-e29b-41d4-a716-446655444002', NULL, 2, 'tbsp', 3, 'Marinade', 'Apple cider vinegar - needs food entry'),
+('550e8400-e29b-41d4-a716-446655444002', NULL, 2, 'small', 4, 'Marinade', 'Chipotle peppers - needs food entry'),
+('550e8400-e29b-41d4-a716-446655444002', NULL, 1, 'tbsp', 5, 'Marinade', 'Adobo sauce - needs food entry'),
+('550e8400-e29b-41d4-a716-446655444002', NULL, 0.5, 'tbsp', 6, 'Marinade', 'Brown sugar - needs food entry'),
+('550e8400-e29b-41d4-a716-446655444002', NULL, 0.5, 'tbsp', 7, 'Marinade', 'Chili powder - needs food entry'),
+('550e8400-e29b-41d4-a716-446655444002', NULL, 1, 'tsp', 8, 'Marinade', 'Smoked paprika - needs food entry'),
+('550e8400-e29b-41d4-a716-446655444002', NULL, 1, 'tsp', 9, 'Marinade', 'Ground cumin - needs food entry'),
+('550e8400-e29b-41d4-a716-446655444002', NULL, 0.5, 'tsp', 10, 'Marinade', 'Dried oregano - needs food entry'),
+('550e8400-e29b-41d4-a716-446655444002', NULL, 0.25, 'tsp', 11, 'Marinade', 'Ground cinnamon - needs food entry'),
+('550e8400-e29b-41d4-a716-446655444002', NULL, 1, 'clove', 12, 'Marinade', 'Garlic - needs food entry'),
+-- Main ingredients
+('550e8400-e29b-41d4-a716-446655444002', '550e8400-e29b-41d4-a716-446655443022', 200, 'g', 13, 'Protein', 'Plant chicken pieces (using tofu as substitute)'),
+('550e8400-e29b-41d4-a716-446655444002', '550e8400-e29b-41d4-a716-446655443015', 25, 'g', 14, 'Vegetables', 'White onion, sliced thinly'),
+('550e8400-e29b-41d4-a716-446655444002', '550e8400-e29b-41d4-a716-446655443009', 50, 'g', 15, 'Fruits', 'Fresh pineapple slices'),
+-- Pineapple salsa ingredients
+('550e8400-e29b-41d4-a716-446655444002', '550e8400-e29b-41d4-a716-446655443009', 75, 'g', 16, 'Salsa', 'Fresh pineapple, chopped'),
+('550e8400-e29b-41d4-a716-446655444002', NULL, 1, 'small', 17, 'Salsa', 'Jalapeño, seeds removed and chopped - needs food entry'),
+('550e8400-e29b-41d4-a716-446655444002', '550e8400-e29b-41d4-a716-446655443015', 25, 'g', 18, 'Salsa', 'Red onion, chopped'),
+('550e8400-e29b-41d4-a716-446655444002', NULL, 2, 'tbsp', 19, 'Salsa', 'Fresh cilantro, chopped - needs food entry'),
+('550e8400-e29b-41d4-a716-446655444002', '550e8400-e29b-41d4-a716-446655443002', 0.5, 'medium', 20, 'Salsa', 'Lime juice'),
+-- Taco assembly
+('550e8400-e29b-41d4-a716-446655444002', NULL, 6, 'small', 21, 'Tacos', 'Corn or flour tortillas - needs food entry'),
+('550e8400-e29b-41d4-a716-446655444002', NULL, 2, 'tbsp', 22, 'Tacos', 'Vegan sour cream (optional) - needs food entry');
 
 -- ==================================================
 -- COMPLETION MESSAGE
