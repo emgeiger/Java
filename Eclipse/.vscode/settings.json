@@ -1,5 +1,5 @@
 {
-    "java.project.sourcePaths": ["src", "src/main/java"],
+    "java.project.sourcePaths": ["src/main/java"],
     "java.project.outputPath": "build/classes/java/main",
     "java.project.referencedLibraries": [
         "lib/**/*.jar"
@@ -8,5 +8,21 @@
     "java.test.config": {
         "workingDirectory": "${workspaceFolder}",
         "sourcePaths": ["src/test/java"]
-    }
+    },
+    "files.exclude": {
+        "**/bin/": true,
+        "**/build/": false,
+        "**/.gradle/": true,
+        "**/gradle-backup/": true,
+        "**/local-gradle/": true,
+        "**/.gradle-cache/": true
+    },
+    "java.compile.nullAnalysis.mode": "automatic",
+    "java.debug.settings.onBuildFailureProceed": true,
+    "java.project.resourceFilters": [
+        "node_modules",
+        ".git",
+        "bin",
+        ".gradle"
+    ]
 }
