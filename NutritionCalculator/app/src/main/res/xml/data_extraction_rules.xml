@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data-extraction-rules>
+    <!-- Cloud backup rules for Android 12+ -->
+    <cloud-backup>
+        <!-- Include nutrition data for cloud backup -->
+        <include domain="database" path="nutrition.db"/>
+        <include domain="sharedpref" path="nutrition_preferences.xml"/>
+        <include domain="sharedpref" path="user_profile.xml"/>
+        
+        <!-- Exclude sensitive data from cloud backup -->
+        <exclude domain="database" path="user_sessions.db"/>
+        <exclude domain="sharedpref" path="api_keys.xml"/>
+        <exclude domain="external" path="cache/"/>
+    </cloud-backup>
+    
+    <!-- Device transfer rules -->
+    <device-transfer>
+        <!-- Include user data for device transfer -->
+        <include domain="database" path="nutrition.db"/>
+        <include domain="sharedpref" path="nutrition_preferences.xml"/>
+        <include domain="sharedpref" path="user_profile.xml"/>
+        
+        <!-- Exclude temporary data -->
+        <exclude domain="database" path="user_sessions.db"/>
+        <exclude domain="external" path="cache/"/>
+    </device-transfer>
+</data-extraction-rules>

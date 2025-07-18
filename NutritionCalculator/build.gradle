@@ -1,0 +1,91 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext {
+        kotlin_version = '1.9.22'
+        compose_bom_version = '2024.08.00'
+        hilt_version = '2.48'
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.1.4'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_version"
+        classpath "org.jetbrains.kotlin:kotlin-serialization:$kotlin_version"
+    }
+}
+
+plugins {
+    id 'java'
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+    google()
+}
+
+dependencies {
+    // JSON processing for nutrition data
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.15.2'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.15.2'
+    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.15.2'
+    
+    // HTTP client for nutrition API calls
+    implementation 'org.apache.httpcomponents:httpclient:4.5.14'
+    
+    // Swing components for enhanced GUI
+    implementation 'com.formdev:flatlaf:3.2'
+    
+    // Testing dependencies
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.9.2'
+    testImplementation 'org.mockito:mockito-core:5.1.1'
+    testImplementation 'org.mockito:mockito-junit-jupiter:5.1.1'
+    
+    // Additional testing for nutrition calculations
+    testImplementation 'org.junit.jupiter:junit-jupiter-params:5.9.2'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
+
+application {
+    mainClass = 'com.nutrition.calculator.NutritionApp'
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/main/java']
+        }
+        resources {
+            srcDirs = ['src/main/resources']
+        }
+    }
+    test {
+        java {
+            srcDirs = ['src/test/java']
+        }
+        resources {
+            srcDirs = ['src/test/resources']
+        }
+    }
+}
+
+test {
+    useJUnitPlatform()
+    
+    testLogging {
+        events "passed", "skipped", "failed"
+        exceptionFormat "full"
+    }
+}
+
+// Task to run the desktop application
+task runDesktop(type: JavaExec) {
+    group = 'application'
+    description = 'Run the desktop nutrition calculator'
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'com.nutrition.calculator.NutritionApp'
+}
