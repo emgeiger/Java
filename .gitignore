@@ -44,6 +44,12 @@ Eclipse/bin/
 **/gradle-backup/
 **/local-gradle/
 
+# Gradle distributions (should not be in version control)
+**/gradle-8.*/
+**/gradle-*.zip
+gradle-temp.zip
+gradle-*.tar.gz
+
 # Gradle wrapper (keep gradlew and gradlew.bat)
 gradle-wrapper.jar
 
