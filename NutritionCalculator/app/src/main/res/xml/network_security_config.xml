@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!-- Configuration for corporate networks and nutrition API access -->
+    <domain-config cleartextTrafficPermitted="true">
+        <!-- Nutrition API domains -->
+        <domain includeSubdomains="true">api.edamam.com</domain>
+        <domain includeSubdomains="true">world.openfoodfacts.org</domain>
+        <domain includeSubdomains="true">api.nutritionix.com</domain>
+        <domain includeSubdomains="true">api.spoonacular.com</domain>
+        
+        <!-- Local development -->
+        <domain includeSubdomains="true">localhost</domain>
+        <domain includeSubdomains="true">10.0.0.0/8</domain>
+        <domain includeSubdomains="true">192.168.0.0/16</domain>
+        <domain includeSubdomains="true">172.16.0.0/12</domain>
+    </domain-config>
+    
+    <!-- Base configuration for other domains -->
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors>
+            <certificates src="system"/>
+            <certificates src="user"/>
+        </trust-anchors>
+    </base-config>
+    
+    <!-- Debug configuration (remove in production) -->
+    <debug-overrides>
+        <trust-anchors>
+            <certificates src="system"/>
+            <certificates src="user"/>
+        </trust-anchors>
+    </debug-overrides>
+</network-security-config>

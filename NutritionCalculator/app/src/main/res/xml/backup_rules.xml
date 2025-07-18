@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<backup-rules>
+    <!-- Include nutrition data for backup -->
+    <include domain="database" path="nutrition.db"/>
+    <include domain="database" path="nutrition.db-wal"/>
+    <include domain="database" path="nutrition.db-shm"/>
+    <include domain="sharedpref" path="nutrition_preferences.xml"/>
+    <include domain="sharedpref" path="user_profile.xml"/>
+    
+    <!-- Exclude sensitive data -->
+    <exclude domain="database" path="user_sessions.db"/>
+    <exclude domain="sharedpref" path="api_keys.xml"/>
+</backup-rules>
