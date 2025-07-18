@@ -16,12 +16,13 @@
 **/.github/
 .github/
 
-# Eclipse project specific exclusions
+# Eclipse project specific exclusions  
 Eclipse/android/build/
 Eclipse/gradle-backup/
 Eclipse/local-gradle/
 Eclipse/.gradle-cache/
 Eclipse/config/
+Eclipse/bin/
 
 # Duplicate and backup files
 **/*.bak
