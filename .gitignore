@@ -16,6 +16,21 @@
 **/.github/
 .github/
 
+# Eclipse project specific exclusions
+Eclipse/android/build/
+Eclipse/gradle-backup/
+Eclipse/local-gradle/
+Eclipse/.gradle-cache/
+Eclipse/config/
+
+# Duplicate and backup files
+**/*.bak
+**/*backup*
+**/*temp*
+**/manual/
+**/outputs/
+**/temp_apk/
+
 # ==================================================
 # GRADLE BUILD ARTIFACTS
 # ==================================================
@@ -55,12 +70,26 @@ gradle-wrapper.jar
 # ANDROID BUILD ARTIFACTS
 # ==================================================
 
+# Android build directories
+**/build/
+**/build/outputs/
+**/build/temp_apk/
+**/build/intermediates/
+**/android/build/
+
 # Android
 **/gen/
 **/local.properties
 **/proguard/
 **/*.ap_
 **/*.dex
+**/*.apk
+
+# Android Studio
+**/.idea/
+**/captures/
+**/.externalNativeBuild/
+**/.cxx/
 
 # ==================================================
 # ENVIRONMENT AND SECURITY
