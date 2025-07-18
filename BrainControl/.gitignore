@@ -34,3 +34,6 @@ Thumbs.db
 
 # Java specific
 hs_err_pid*
+
+# Copilot instructions (may contain sensitive information)
+.github/copilot-instructions.md
