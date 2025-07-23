@@ -1,4 +1,4 @@
 rootProject.name = 'Eclipse'
 
-// Include Android module
-include ':android'
+// Include Android module (commented out temporarily)
+// include ':android'

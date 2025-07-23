@@ -1,0 +1,37 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group = 'com.emgeiger'
+version = '1.0-SNAPSHOT'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+repositories {
+    mavenCentral()
+}
+
+// No dependencies for offline build
+dependencies {
+    // No external dependencies
+}
+
+application {
+    mainClass = 'EclipseSlider'
+}
+
+// Basic build task
+task simpleBuild {
+    dependsOn 'compileJava'
+    group = 'build'
+    description = 'Simple build without external dependencies'
+    
+    doLast {
+        println "Simple build completed successfully!"
+        println "Java sources compiled to: ${project.buildDir}/classes/java/main"
+    }
+}

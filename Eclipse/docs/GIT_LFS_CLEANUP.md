@@ -6,14 +6,14 @@ Fixed Git LFS large file size limits by removing unnecessary build artifacts and
 
 ## Files Removed
 
-- `Eclipse/build-tools/gradle-8.5-bin.zip` (126.38 MB)
-- `Eclipse/build-tools/gradle-8.5/` directory and all contents
+- `Eclipse/build-tools/gradle-bin.zip` (Large File)
+- `Eclipse/build-tools/gradle/` directory and all contents
 - **Total Space Saved**: ~129 MB
 
 ## Why These Files Were Removed
 
-1. **Gradle Distribution ZIP**: The `gradle-8.5-bin.zip` file is a complete Gradle distribution that can be downloaded automatically by the Gradle wrapper
-2. **Extracted Gradle Directory**: The `gradle-8.5/` directory contains the same files as the ZIP, duplicating the space usage
+1. **Gradle Distribution ZIP**: The `gradle-bin.zip` file is a complete Gradle distribution that can be downloaded automatically by the Gradle wrapper
+2. **Extracted Gradle Directory**: The `gradle/` directory contains the same files as the ZIP, duplicating the space usage
 3. **Build Artifacts**: These files are not necessary for source control and can be regenerated
 
 ## How Gradle Still Works

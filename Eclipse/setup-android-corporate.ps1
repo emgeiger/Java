@@ -3,7 +3,7 @@
 # Based on emgeiger/Gradle template corporate network configuration
 
 Write-Host "🔧 Setting up Android Build Environment for Corporate Network..." -ForegroundColor Green
-Write-Host "Using Gradle 8.10.2 for enhanced build performance and compatibility" -ForegroundColor Cyan
+Write-Host "Using Gradle for enhanced build performance and compatibility" -ForegroundColor Cyan
 
 # Set Java system properties for SSL bypassing (Android builds)
 $env:JAVA_OPTS = "-Dtrust_all_cert=true -Dcom.sun.net.ssl.checkRevocation=false -Dsun.security.ssl.allowUnsafeRenegotiation=true -Djava.net.useSystemProxies=true"

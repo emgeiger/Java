@@ -1,0 +1,42 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group = 'com.emgeiger'
+version = '1.0-SNAPSHOT'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+repositories {
+    mavenCentral()
+    gradlePluginPortal()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.10.0'
+}
+
+application {
+    mainClass = 'EclipseSlider'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+// Basic build task
+task simpleBuild {
+    dependsOn 'compileJava'
+    group = 'build'
+    description = 'Simple build without external dependencies'
+    
+    doLast {
+        println "Simple build completed successfully!"
+        println "Java sources compiled to: ${project.buildDir}/classes/java/main"
+    }
+}

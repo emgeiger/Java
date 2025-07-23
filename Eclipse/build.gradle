@@ -1,35 +1,51 @@
 plugins {
     id 'java'
     id 'application'
+    id 'jacoco'
+    id 'checkstyle'
+    id 'pmd'
+    // id 'com.github.spotbugs' version '6.0.26'  // Commented out temporarily
 }
 
 repositories {
     mavenCentral()
+    gradlePluginPortal()
 }
 
 dependencies {
-    // Swiss Ephemeris for astronomical calculations
-    implementation 'org.swisseph:swisseph:2.10.03-2'
+    // Swiss Ephemeris for astronomical calculations (temporarily commented until available)
+    // implementation 'com.github.rahulyhg:swisseph:2.10.03-2'
+    
+    // Logging
+    implementation 'org.slf4j:slf4j-api:2.0.16'
+    implementation 'ch.qos.logback:logback-classic:1.4.14'
+    
+    // Utilities
+    implementation 'org.apache.commons:commons-lang3:3.17.0'
+    implementation 'com.google.guava:guava:33.3.1-jre'
     
     // Testing dependencies
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
-    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.9.2'
-    testImplementation 'org.mockito:mockito-core:5.1.1'
-    testImplementation 'org.mockito:mockito-junit-jupiter:5.1.1'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.11.3'
+    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.11.3'
+    testImplementation 'org.junit.jupiter:junit-jupiter-params:5.11.3'
+    testImplementation 'org.mockito:mockito-core:5.14.2'
+    testImplementation 'org.mockito:mockito-junit-jupiter:5.14.2'
+    testImplementation 'org.assertj:assertj-core:3.26.3'
     
-    // Additional testing for astronomical calculations
-    testImplementation 'org.junit.jupiter:junit-jupiter-params:5.9.2'
+    // SpotBugs annotations
+    compileOnly 'com.github.spotbugs:spotbugs-annotations:4.8.6'
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_11
-    targetCompatibility = JavaVersion.VERSION_11
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
 }
 
 application {
     mainClass = 'EclipseSlider'
 }
 
+// Configure source sets to match proper Gradle structure
 sourceSets {
     main {
         java {
@@ -61,5 +77,92 @@ test {
     testLogging {
         events "passed", "skipped", "failed"
         exceptionFormat "full"
+        showStandardStreams = false
     }
+    finalizedBy jacocoTestReport
+}
+
+// JaCoCo configuration for code coverage
+jacoco {
+    toolVersion = "0.8.12"
+}
+
+jacocoTestReport {
+    dependsOn test
+    reports {
+        xml.required = true
+        html.required = true
+    }
+    finalizedBy jacocoTestCoverageVerification
+}
+
+jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            limit {
+                counter = 'LINE'
+                value = 'COVEREDRATIO'
+                minimum = 0.60  // 60% coverage minimum
+            }
+        }
+    }
+}
+
+// Checkstyle configuration
+checkstyle {
+    toolVersion = '10.20.1'
+    configFile = file('config/checkstyle/checkstyle.xml')
+    ignoreFailures = false
+    maxWarnings = 0
+}
+
+// PMD configuration
+pmd {
+    toolVersion = '7.8.0'
+    consoleOutput = true
+    ruleSetFiles = files('config/pmd/ruleset.xml')
+    ignoreFailures = false
+}
+
+// SpotBugs configuration (commented out temporarily)
+// spotbugs {
+//     toolVersion = '4.8.6'
+//     ignoreFailures = false
+//     effort = 'max'
+//     reportLevel = 'low'
+//     excludeFilter = file('config/spotbugs/exclude.xml')
+// }
+
+// spotbugsMain {
+//     reports {
+//         html.required = true
+//         xml.required = true
+//     }
+// }
+
+// spotbugsTest {
+//     reports {
+//         html.required = true
+//         xml.required = true
+//     }
+// }
+
+// Custom task to run all code quality checks
+task codeQuality {
+    dependsOn 'checkstyleMain', 'checkstyleTest', 'pmdMain', 'pmdTest' // , 'spotbugsMain', 'spotbugsTest'
+    group = 'verification'
+    description = 'Run all code quality checks'
+}
+
+// Clean build task
+task cleanBuild {
+    dependsOn 'clean', 'build'
+    group = 'build'
+    description = 'Clean and build the project'
+}
+
+// Wrapper task to ensure consistent Gradle version
+wrapper {
+    gradleVersion = '8.11.1'
+    distributionType = Wrapper.DistributionType.ALL
 }

@@ -49,12 +49,14 @@ Eclipse/
 Both platforms use the Swiss Ephemeris library (version 2.10.03-2) for:
 
 ### Accurate Calculations
+
 - Lunar phase percentages (0-100%)
 - Moon illumination levels
 - Phase name determination
 - Lunar position calculations
 
 ### Professional Features
+
 - Julian day calculations
 - Ecliptic longitude computations
 - Moon age calculations
@@ -63,12 +65,14 @@ Both platforms use the Swiss Ephemeris library (version 2.10.03-2) for:
 ## Building the Project
 
 ### Prerequisites
+
 - **Java 11+**: Required for both platforms
-- **Gradle 8.0+**: Build system
+- **Gradle**: Build system
 - **Android Studio**: For Android development
 - **Corporate Network**: See setup scripts for enterprise environments
 
 ### Desktop Application
+
 ```bash
 # Build desktop version
 ./gradlew build
@@ -81,6 +85,7 @@ Both platforms use the Swiss Ephemeris library (version 2.10.03-2) for:
 ```
 
 ### Android Application
+
 ```bash
 # Build Android module
 ./gradlew :android:build
@@ -93,6 +98,7 @@ Both platforms use the Swiss Ephemeris library (version 2.10.03-2) for:
 ```
 
 ### Build Both Platforms
+
 ```bash
 # Build all modules
 ./gradlew buildAll
@@ -106,12 +112,14 @@ Both platforms use the Swiss Ephemeris library (version 2.10.03-2) for:
 Following the **emgeiger/Gradle** template pattern, this project includes comprehensive corporate network support:
 
 ### Setup Scripts
+
 - `setup-corporate-network.ps1` - Desktop Gradle configuration
 - `setup-android-corporate.ps1` - Android-specific setup
 - Manual SSL certificate handling
 - Proxy configuration templates
 
 ### Configuration Files
+
 - `gradle.properties` - Corporate proxy settings
 - `android/gradle.properties` - Android-specific network config
 - SSL bypass options for development
@@ -120,6 +128,7 @@ Following the **emgeiger/Gradle** template pattern, this project includes compre
 ## Swiss Ephemeris Features
 
 ### Desktop Implementation (`MoonPhases.java`)
+
 ```java
 // Get current lunar phase percentage
 double phase = MoonPhases.getCurrentLunarPhase();
@@ -132,6 +141,7 @@ String phaseName = MoonPhases.getPhaseName(phase);
 ```
 
 ### Android Implementation (`MoonPhasesAndroid.kt`)
+
 ```kotlin
 // Initialize Swiss Ephemeris
 val moonPhases = MoonPhasesAndroid()
@@ -146,6 +156,7 @@ val moonAge = moonPhases.getMoonAge()
 ## User Interface Design
 
 ### Desktop (Swing)
+
 - **Header Panel**: Swiss Ephemeris branding with raised border
 - **Moon Visualization**: 300x300 pixel Graphics2D canvas
 - **Data Panel**: GridBagLayout with formatted lunar information
@@ -153,6 +164,7 @@ val moonAge = moonPhases.getMoonAge()
 - **Color Scheme**: Space-themed dark background
 
 ### Android (Compose)
+
 - **Material 3**: Modern Android design system
 - **Responsive Layout**: Adaptive to different screen sizes
 - **Canvas Drawing**: Hardware-accelerated moon rendering
@@ -162,12 +174,14 @@ val moonAge = moonPhases.getMoonAge()
 ## Technical Architecture
 
 ### Desktop Architecture
+
 - **Main Class**: `EclipseSlider extends JFrame`
 - **Data Model**: Static methods in `MoonPhases`
 - **UI Pattern**: Traditional Swing component hierarchy
 - **Threading**: SwingUtilities for UI updates
 
 ### Android Architecture
+
 - **MVVM Pattern**: ViewModel + StateFlow
 - **Compose UI**: Declarative interface components
 - **Coroutines**: Async lunar data calculations
@@ -176,6 +190,7 @@ val moonAge = moonPhases.getMoonAge()
 ## Development Workflow
 
 ### 1. Desktop Development
+
 ```bash
 # Start with desktop version
 ./gradlew run
@@ -186,6 +201,7 @@ val moonAge = moonPhases.getMoonAge()
 ```
 
 ### 2. Android Development
+
 ```bash
 # Switch to Android development
 cd android/
@@ -196,6 +212,7 @@ cd android/
 ```
 
 ### 3. Cross-Platform Testing
+
 ```bash
 # Test both platforms
 ./gradlew buildAll
@@ -208,6 +225,7 @@ cd android/
 ## Future Enhancements
 
 ### Planned Features
+
 - [ ] **Real-time Updates**: Periodic lunar data refresh
 - [ ] **Historical Data**: Past and future lunar phases
 - [ ] **Calendar Integration**: Lunar calendar display
@@ -217,6 +235,7 @@ cd android/
 - [ ] **API Service**: REST API for lunar data
 
 ### Technical Improvements
+
 - [ ] **Unit Tests**: Comprehensive test coverage
 - [ ] **CI/CD Pipeline**: Automated builds and deployment
 - [ ] **Performance**: Optimized calculations
@@ -228,7 +247,7 @@ cd android/
 
 This project uses the **Swiss Ephemeris** library developed by **Astrodienst AG**. Swiss Ephemeris is the industry standard for high-precision astronomical calculations and is used by professional astronomers and astrologers worldwide.
 
-- **Website**: https://www.astro.com/swisseph/
+- **Website**: [https://www.astro.com/swisseph/](https://www.astro.com/swisseph/)
 - **Documentation**: Swiss Ephemeris Programming Interface
 - **License**: Swiss Ephemeris Public License
 - **Version**: 2.10.03-2 (Java implementation)
@@ -236,6 +255,7 @@ This project uses the **Swiss Ephemeris** library developed by **Astrodienst AG*
 ## Project Templates
 
 This project demonstrates the integration of the **emgeiger/Gradle** template for:
+
 - Corporate network configuration
 - Multi-platform Gradle builds
 - Professional development setup
