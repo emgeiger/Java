@@ -1,0 +1,84 @@
+# Modern Gradle Configuration for Swiss Ephemeris Lunar Monitor
+# Updated to match emgeiger/Gradle repository structure
+
+# Java Configuration - Updated for Java 17/21 compatibility
+org.gradle.java.home=C:\\Program Files\\Microsoft\\jdk-21.0.7.6-hotspot
+
+# Gradle Performance and Features
+org.gradle.daemon=true
+org.gradle.parallel=true
+org.gradle.caching=true
+org.gradle.configuration-cache=true
+org.gradle.vfs.watch=true
+
+# Memory Settings - Optimized for modern builds
+org.gradle.jvmargs=-Xmx4g -XX:+UseG1GC -XX:+UseStringDeduplication -XX:MaxMetaspaceSize=512m
+
+# Gradle Wrapper Configuration
+distributionUrl=https://services.gradle.org/distributions/gradle-8.11.1-all.zip
+
+# Corporate Network Configuration
+systemProp.https.proxyHost=proxy.yourcompany.com
+systemProp.https.proxyPort=8080
+systemProp.http.proxyHost=proxy.yourcompany.com
+systemProp.http.proxyPort=8080
+
+# SSL Configuration for corporate networks
+systemProp.javax.net.ssl.trustStore=C:\\path\\to\\corporate\\cacerts
+systemProp.javax.net.ssl.trustStorePassword=changeit
+systemProp.javax.net.debug=ssl:record:plaintext
+
+# Bypass SSL verification for development (remove for production)
+systemProp.com.sun.net.ssl.checkRevocation=false
+systemProp.trust_all_cert=true
+
+# Build optimization
+org.gradle.configureondemand=false
+org.gradle.workers.max=4
+
+# Kotlin configuration
+kotlin.code.style=official
+kotlin.incremental=true
+kotlin.incremental.js=true
+kotlin.incremental.js.klib=true
+
+# Android configuration
+android.useAndroidX=true
+android.enableJetifier=true
+android.enableR8.fullMode=true
+
+# Dependency resolution
+org.gradle.dependency.verification=lenient
+
+# Enhanced build features
+org.gradle.unsafe.configuration-cache=true
+org.gradle.unsafe.configuration-cache-problems=warn
+
+# File encoding
+file.encoding=UTF-8
+
+# Build environment info
+buildInfo.timestamp=auto
+buildInfo.includeHostname=true
+buildInfo.includeUsername=true
+
+# Debug configuration
+org.gradle.debug=false
+org.gradle.debug.port=5005
+
+# Offline mode capability
+org.gradle.offline=false
+
+# JVM configuration for builds
+org.gradle.jvmargs=-Xmx4g -XX:+UseG1GC -XX:+UseStringDeduplication -XX:MaxMetaspaceSize=512m -Dfile.encoding=UTF-8
+
+# Test configuration
+org.gradle.test.single=true
+org.gradle.test.parallel=true
+
+# Logging configuration
+org.gradle.logging.level=lifecycle
+org.gradle.console=plain
+
+# Gradle cache configuration
+org.gradle.cache.cleanup=true

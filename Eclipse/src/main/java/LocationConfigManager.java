@@ -180,6 +180,16 @@ public class LocationConfigManager {
     }
     
     /**
+     * Check if auto-load location on startup is enabled
+     */
+    public boolean isAutoLoadEnabled() {
+        if (properties == null) {
+            loadConfiguration();
+        }
+        return Boolean.parseBoolean(properties.getProperty("auto.load.location.on.startup", "true"));
+    }
+    
+    /**
      * Get location name
      */
     public String getLocationName() {
