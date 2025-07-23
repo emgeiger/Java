@@ -34,10 +34,17 @@ public class EclipseSlider extends JFrame
     private JButton setLocationButton;
     private JButton clearLocationButton;
     
+    // Location configuration manager
+    private LocationConfigManager locationConfig;
+    
     private static final int MOON_RADIUS = 80;
     
     public EclipseSlider() {
         super("Swiss Ephemeris Lunar Phase Monitor with Location Support");
+        
+        // Initialize location configuration manager
+        locationConfig = new LocationConfigManager();
+        locationConfig.loadConfiguration();
         
         // Set up the main window
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -428,8 +435,8 @@ public class EclipseSlider extends JFrame
                 throw new IllegalArgumentException("Elevation must be between -500 and 10000 meters");
             }
             
-            // Set location in MoonPhases
-            MoonPhases.setObserverLocation(latitude, longitude, elevation);
+            // Set location using LocationConfigManager
+            locationConfig.setObserverLocation(latitude, longitude, elevation);
             
             // Update status label
             locationStatusLabel.setText(String.format(

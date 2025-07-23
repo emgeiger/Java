@@ -21,6 +21,7 @@ This is the Android version of the Swiss Ephemeris Lunar Phase Monitor, built wi
 ## Swiss Ephemeris Integration
 
 The app uses the Swiss Ephemeris library (version 2.10.03-2) for:
+
 - Calculating precise lunar phase percentages
 - Determining moon illumination levels
 - Computing lunar position and phase names
@@ -29,6 +30,7 @@ The app uses the Swiss Ephemeris library (version 2.10.03-2) for:
 ## Moon Phase Visualization
 
 The custom `MoonPhaseVisualization` composable provides:
+
 - Accurate moon phase rendering based on Swiss Ephemeris calculations
 - Starfield background for astronomical context
 - Lunar shadow visualization showing current phase
@@ -40,29 +42,34 @@ The custom `MoonPhaseVisualization` composable provides:
 - Minimum SDK: API 24 (Android 7.0)
 - Target SDK: API 34 (Android 14)
 - Kotlin 1.9.22+
-- Gradle 8.10.2+
+- Gradle (latest compatible version)
 
 ## Dependencies
 
 ### Core Android
+
 - AndroidX Core KTX 1.12.0
 - Lifecycle Runtime KTX 2.7.0
 - Activity Compose 1.8.2
 
 ### Jetpack Compose
+
 - Compose BOM 2024.02.00
 - UI, Graphics, Tooling Preview
 - Material 3
 
 ### Astronomical Calculations
+
 - Swiss Ephemeris 2.10.03-2
 
 ### Networking (Future Enhancement)
+
 - OkHttp 4.12.0
 - Retrofit 2.9.0
 - Gson Converter 2.9.0
 
 ### Date/Time
+
 - Kotlinx DateTime 0.5.0
 
 ## Project Structure
@@ -84,21 +91,25 @@ android/
 ## Key Components
 
 ### MainActivity.kt
+
 - Jetpack Compose entry point
 - Hosts the main UI with header, moon visualization, and data panel
 - Uses Material 3 theming with dark space theme
 
 ### LunarViewModel.kt
+
 - MVVM pattern implementation
 - Manages lunar data state using Kotlin StateFlow
 - Handles Swiss Ephemeris calculations in coroutines
 
 ### MoonPhasesAndroid.kt
+
 - Swiss Ephemeris wrapper for Android
 - Provides accurate lunar phase calculations
 - Calculates moon position, illumination, and phase names
 
 ### UI Components
+
 - **SwissEphemerisHeader**: App title and branding
 - **MoonPhaseVisualization**: Custom Canvas drawing for moon phases
 - **LunarDataPanel**: Data display with Material 3 cards
@@ -109,9 +120,9 @@ android/
 2. Navigate to the Eclipse project root
 3. Run the Android module build:
 
-```bash
-./gradlew :android:build
-```
+    ```bash
+    ./gradlew :android:build
+    ```
 
 4. To install on connected device:
 

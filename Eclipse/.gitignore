@@ -13,6 +13,11 @@ src/config.properties
 config.properties
 *.env
 
+# Private project configuration and instructions
+../.github/copilot-instructions.md
+../.github/instructions/
+*copilot-instructions*
+
 # Gradle
 /.gradle/
 # Note: gradlew and gradlew.bat should be committed for wrapper functionality
