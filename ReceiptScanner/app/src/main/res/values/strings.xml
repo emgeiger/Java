@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Receipt Scanner</string>
+    <string name="title_scan">Scan</string>
+    <string name="title_receipts">Receipts</string>
+    <string name="title_analytics">Analytics</string>
+    
+    <!-- Scan Fragment -->
+    <string name="capture_receipt">Capture Receipt</string>
+    <string name="scan_instructions">Position the receipt within the frame and tap the camera button to scan</string>
+    
+    <!-- Receipt Details -->
+    <string name="merchant_name">Merchant</string>
+    <string name="total_amount">Total Amount</string>
+    <string name="receipt_date">Date</string>
+    <string name="category">Category</string>
+    <string name="description">Description</string>
+    <string name="notes">Notes</string>
+    <string name="reimbursable">Reimbursable</string>
+    
+    <!-- Actions -->
+    <string name="save">Save</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="share">Share</string>
+    
+    <!-- Categories -->
+    <string name="category_general">General</string>
+    <string name="category_food">Food &amp; Dining</string>
+    <string name="category_travel">Travel</string>
+    <string name="category_office">Office Supplies</string>
+    <string name="category_entertainment">Entertainment</string>
+    <string name="category_fuel">Fuel</string>
+    <string name="category_other">Other</string>
+</resources>
