@@ -1,0 +1,17 @@
+# Swiss Ephemeris Configuration Template
+# Built-in astronomical calculations - no external configuration needed
+
+# Application settings
+app.name=Swiss Ephemeris Lunar Phase Monitor
+app.version=1.0.0
+
+# Display settings  
+display.precision=1
+display.update.interval=300000
+
+# Calculation settings
+calculation.method=built-in
+calculation.precision=high
+
+# NOTE: This application uses built-in Swiss Ephemeris algorithms
+# No API keys or external dependencies required

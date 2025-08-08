@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FindBugsFilter>
+    <!-- Exclude test files from certain checks -->
+    <Match>
+        <Class name="~.*Test.*"/>
+        <Bug pattern="DM_EXIT"/>
+    </Match>
+    
+    <!-- Exclude GUI event handlers from certain checks -->
+    <Match>
+        <Class name="~.*Form.*"/>
+        <Bug pattern="SE_BAD_FIELD"/>
+    </Match>
+    
+    <!-- Allow GUI components to have many fields -->
+    <Match>
+        <Class name="~.*Form.*"/>
+        <Bug pattern="SE_TRANSIENT_FIELD_NOT_RESTORED"/>
+    </Match>
+    
+    <!-- Swiss Ephemeris calculations may use floating point comparisons -->
+    <Match>
+        <Package name="~.*"/>
+        <Bug pattern="FE_FLOATING_POINT_EQUALITY"/>
+    </Match>
+    
+    <!-- Allow console output in main methods -->
+    <Match>
+        <Method name="main"/>
+        <Bug pattern="DM_EXIT"/>
+    </Match>
+    
+    <!-- Allow System.out.println in demo/test code -->
+    <Match>
+        <Or>
+            <Class name="~.*Test.*"/>
+            <Class name="~.*Demo.*"/>
+            <Class name="~.*Example.*"/>
+        </Or>
+        <Bug pattern="INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE"/>
+    </Match>
+    
+    <!-- Exclude generated code -->
+    <Match>
+        <Class name="~.*\$.*"/>
+        <Bug category="STYLE"/>
+    </Match>
+    
+    <!-- Allow empty catch blocks in resource cleanup -->
+    <Match>
+        <Bug pattern="DE_MIGHT_IGNORE"/>
+    </Match>
+    
+    <!-- Allow potentially null return values in astronomical calculations -->
+    <Match>
+        <Method name="~.*calculate.*"/>
+        <Bug pattern="NP_NULL_ON_SOME_PATH"/>
+    </Match>
+</FindBugsFilter>
