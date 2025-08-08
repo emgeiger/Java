@@ -1,14 +1,15 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    // id 'kotlin-kapt'  // Temporarily disabled due to JDK compatibility issues
 }
 
 android {
-    namespace 'com.ovintiv.receiptscanner'
+    namespace 'com.Geiger.receiptscanner'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.ovintiv.receiptscanner"
+        applicationId "com.Geiger.receiptscanner"
         minSdk 24
         targetSdk 34
         versionCode 1
@@ -32,8 +33,12 @@ android {
     }
     buildFeatures {
         viewBinding true
-        dataBinding true
+        dataBinding false
     }
+    // kapt {
+    //     correctErrorTypes true
+    //     useBuildCache true
+    // }
 }
 
 dependencies {
@@ -59,7 +64,7 @@ dependencies {
     // Database - Room
     implementation 'androidx.room:room-runtime:2.6.1'
     implementation 'androidx.room:room-ktx:2.6.1'
-    kapt 'androidx.room:room-compiler:2.6.1'
+    // kapt 'androidx.room:room-compiler:2.6.1'  // Temporarily disabled
     
     // Date/Time handling
     implementation 'org.jetbrains.kotlinx:kotlinx-datetime:0.5.0'
