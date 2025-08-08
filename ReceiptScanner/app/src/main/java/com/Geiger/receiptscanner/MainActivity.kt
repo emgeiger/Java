@@ -1,4 +1,4 @@
-package com.ovintiv.receiptscanner
+package com.Geiger.receiptscanner
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -8,7 +8,7 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.ovintiv.receiptscanner.databinding.ActivityMainBinding
+import com.Geiger.receiptscanner.databinding.ActivityMainBinding
 
 /**
  * Main Activity for the Receipt Scanner App
