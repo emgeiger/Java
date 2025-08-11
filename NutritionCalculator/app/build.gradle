@@ -22,6 +22,11 @@ android {
         vectorDrawables {
             useSupportLibrary true
         }
+
+    // BuildConfig values (replace with real values or inject via CI)
+    buildConfigField 'String', 'SUPABASE_URL', '"https://example.supabase.co"'
+    buildConfigField 'String', 'SUPABASE_ANON_KEY', '"public-anon-key-placeholder"'
+    buildConfigField 'String', 'EXTERNAL_API_BASE_URL', '"https://api.example.com/"'
     }
 
     buildTypes {
@@ -42,6 +47,7 @@ android {
     
     buildFeatures {
         compose true
+    buildConfig true
     }
     
     composeOptions {
