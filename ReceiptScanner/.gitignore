@@ -1,0 +1,61 @@
+# Gradle files
+.gradle/
+build/
+gradle-app.setting
+!gradle-wrapper.jar
+!gradle-wrapper.properties
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
+
+# NetBeans cache files
+.gradle/nb-cache/
+**/nb-cache/
+
+# Build outputs
+target/
+out/
+bin/
+
+# IDE files
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/
+.settings/
+.classpath
+.project
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+*.swp
+*~
+
+# Lock files
+*.lock
+.LCK*
+
+# Local environment files
+.env
+local.properties
+
+# Android specific
+*.apk
+*.aab
+*.ap_
+*.dex
+dexedLibs/
+proguard/
+lint-results*
+gen/
+R.java
+
+# Supabase configuration (keep template)
+supabase.properties
+!supabase.properties.template
