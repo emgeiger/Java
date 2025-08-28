@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data-extraction-rules>
+    <cloud-backup>
+        <!-- TODO: Use <include> and <exclude> tags to control what is backed up.
+        <include .../>
+        <exclude .../>
+        -->
+    </cloud-backup>
+    <!--
+    Allow backup of the full package, including <exclude> and <include> statements.
+    If you want to explicitly allow or disallow specific domains, use a <domain-config> section.
+    -->
+    <device-transfer>
+        <include domain="sharedpref" path="."/>
+        <include domain="database" path="."/>
+        <include domain="file" path="."/>
+        <include domain="external" path="."/>
+    </device-transfer>
+</data-extraction-rules>

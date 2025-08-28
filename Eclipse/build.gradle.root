@@ -1,12 +1,31 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext {
+        compose_ui_version = '1.5.8'
+        kotlin_version = '1.9.22'
+    }
+    
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.7.2'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
 plugins {
     id 'java'
     id 'application'
+    id 'com.android.application' version '8.7.2' apply false
+    id 'org.jetbrains.kotlin.android' version '1.9.22' apply false
 }
 
-repositories {
-    mavenCentral()
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
 }
 
+// Desktop application configuration (existing)
 dependencies {
     // Swiss Ephemeris for astronomical calculations
     implementation 'org.swisseph:swisseph:2.10.03-2'
@@ -49,17 +68,29 @@ sourceSets {
     }
 }
 
-// Task to run the application
-task runEclipse(type: JavaExec) {
-    classpath = sourceSets.main.runtimeClasspath
-    mainClass = 'EclipseSlider'
-}
-
-// Configure test task
-test {
+tasks.named('test') {
     useJUnitPlatform()
+    
     testLogging {
         events "passed", "skipped", "failed"
         exceptionFormat "full"
+        showStandardStreams = false
     }
+}
+
+// Task to build both desktop and Android versions
+task buildAll {
+    group = 'build'
+    description = 'Build both desktop and Android versions of the Swiss Ephemeris Lunar Monitor'
+    
+    dependsOn 'build'
+    if (project.hasProperty('android')) {
+        dependsOn ':android:build'
+    }
+}
+
+task runDesktop {
+    group = 'application'
+    description = 'Run the desktop version of Swiss Ephemeris Lunar Monitor'
+    dependsOn 'run'
 }

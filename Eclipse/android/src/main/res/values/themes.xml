@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Base.Theme.SwissEphemerisLunar" parent="Theme.Material3.DynamicColors.DayNight">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="Theme.SwissEphemerisLunar" parent="Base.Theme.SwissEphemerisLunar" />
+</resources>

@@ -3,6 +3,11 @@
 /bin/
 /build/
 
+# Build tools and distributions (prevents large files)
+/build-tools/
+gradle-*-bin.zip
+gradle-*-all.zip
+
 # Configuration files with sensitive data
 src/config.properties
 config.properties
@@ -10,8 +15,21 @@ config.properties
 
 # Gradle
 /.gradle/
-/gradlew
-/gradlew.bat
+# Note: gradlew and gradlew.bat should be committed for wrapper functionality
+
+# Gradle build output
+/build/
+/build-*/
+
+# Gradle daemon files
+.gradle/
+gradle-app.setting
+!gradle-wrapper.jar
+!gradle-wrapper.properties
+
+# Profile-specific Gradle configurations (if using environment-based setup)
+gradle.properties.local
+gradle-local.properties
 
 # Log files
 *.log

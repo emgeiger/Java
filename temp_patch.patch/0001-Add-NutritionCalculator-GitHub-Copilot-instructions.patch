@@ -1,0 +1,23 @@
+From 7e5e47f1c73d1db53000bc8b786462fc8809a245 Mon Sep 17 00:00:00 2001
+From: emgeiger <emgeiger1991@gmail.com>
+Date: Fri, 11 Jul 2025 22:23:31 -0500
+Subject: [PATCH] Add NutritionCalculator GitHub Copilot instructions
+
+- Added .github/instructions directory for Nutrition Calculator project
+- Included Copilot-Kotlin-JetpackCompose.instructions.md for development guidance
+- Provides project-specific context for GitHub Copilot integration
+- Supports both Java desktop and potential Android/Kotlin development
+
+This directory contains development instructions and configuration files
+for enhanced Copilot assistance in the Nutrition Calculator project.
+---
+ .../instructions/Copilot-Kotlin-JetpackCompose.instructions.md    | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 NutritionCalculator/.github/instructions/Copilot-Kotlin-JetpackCompose.instructions.md
+
+diff --git a/NutritionCalculator/.github/instructions/Copilot-Kotlin-JetpackCompose.instructions.md b/NutritionCalculator/.github/instructions/Copilot-Kotlin-JetpackCompose.instructions.md
+new file mode 100644
+index 0000000..e69de29
+-- 
+2.50.0.windows.2
+
