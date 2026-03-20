@@ -1,3 +1,5 @@
 <classpath>
     <classpathentry kind="lib" path="%userprofile%/Documents/Github/java/BrainControl"/>
+    <classpathentry kind="lib" path="%userprofile%/Documents/Github/java/BrainControl/lib/bluecove-2.1.0.jar"/>
+    <classpathentry kind="lib" path="%userprofile%/Documents/Github/java/BrainControl/lib/jfreechart-1.0.19.jar"/>
 </classpath>
