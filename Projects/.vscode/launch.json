@@ -1,0 +1,49 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Buttons",
+            "request": "launch",
+            "mainClass": "Buttons",
+            "projectName": "Projects_bbb99232"
+        },
+        {
+            "type": "java",
+            "name": "ClickTracker",
+            "request": "launch",
+            "mainClass": "ClickTracker",
+            "projectName": "Projects_bbb99232"
+        },
+        {
+            "type": "java",
+            "name": "Thermal",
+            "request": "launch",
+            "mainClass": "Thermal",
+            "projectName": "Projects_bbb99232"
+        },
+        {
+            "type": "java",
+            "name": "TicTacToe",
+            "request": "launch",
+            "mainClass": "TicTacToe",
+            "projectName": "Projects_bbb99232"
+        }
+        {
+            "type": "java",
+            "name": "GarageDoor",
+            "request": "launch",
+            "mainClass": "GarageDoorDriver",
+            "projectName": "Projects_a6265810"
+        }
+    ]
+}
