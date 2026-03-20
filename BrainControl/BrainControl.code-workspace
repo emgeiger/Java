@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../../../../../.cursor-tutor"
+		},
+		{
+			"path": "."
+		},
+		{
+			"path": "../../car-bci-shit"
+		}
+	],
+	"settings": {
+		"dotnet.preferCSharpExtension": true
+	}
+}
