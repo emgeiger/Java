@@ -13,10 +13,14 @@ buildscript {
     }
 }
 
-// Root project configuration for desktop Java application
 plugins {
     id 'java'
     id 'application'
+}
+
+repositories {
+    mavenCentral()
+    google()
 }
 
 dependencies {
