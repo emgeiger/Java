@@ -13,6 +13,7 @@ import java.nio.charset.StandardCharsets;
  */
 @ExtendWith(MockitoExtension.class)
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@Tag("unit")
 public class MoonPhasesTest {
     
     private static final String TEST_JSON_RESPONSE = """
@@ -47,25 +48,19 @@ public class MoonPhasesTest {
     @DisplayName("Test API response with DEMO_KEY (live test)")
     @Timeout(30) // 30 second timeout for network operations
     void testLiveApiConnection() {
-        try {
-            byte[] response = MoonPhases.getMoonPhases();
-            
-            if (response != null) {
-                // Verify response is valid JSON-like content
-                String responseStr = new String(response, StandardCharsets.UTF_8);
-                assertTrue(responseStr.length() > 0, "Response should not be empty");
-                assertTrue(responseStr.contains("{") || responseStr.contains("error"), 
-                    "Response should be JSON or contain error message");
-                
-                System.out.println("✅ Live API test successful");
-                System.out.println("Response length: " + response.length + " bytes");
-            } else {
-                System.out.println("⚠️ API returned null - this may be expected with DEMO_KEY");
-            }
-            
-        } catch (IOException e) {
-            // Network issues are acceptable in unit tests
-            System.out.println("⚠️ Network error (acceptable in test environment): " + e.getMessage());
+        byte[] response = MoonPhases.getMoonPhases();
+
+        if (response != null) {
+            // Verify response is valid JSON-like content
+            String responseStr = new String(response, StandardCharsets.UTF_8);
+            assertTrue(responseStr.length() > 0, "Response should not be empty");
+            assertTrue(responseStr.contains("{") || responseStr.contains("error"),
+                "Response should be JSON or contain error message");
+
+            System.out.println("✅ Live API test successful");
+            System.out.println("Response length: " + response.length + " bytes");
+        } else {
+            System.out.println("⚠️ API returned null - this may be expected with DEMO_KEY");
         }
     }
     
@@ -85,18 +80,13 @@ public class MoonPhasesTest {
     @Order(4)
     @DisplayName("Test string conversion method")
     void testStringConversion() {
-        try {
-            String response = MoonPhases.getMoonPhasesAsString();
-            
-            if (response != null) {
-                assertFalse(response.isEmpty(), "String response should not be empty if not null");
-                System.out.println("✅ String conversion test successful");
-            } else {
-                System.out.println("⚠️ String response is null (may be expected)");
-            }
-            
-        } catch (IOException e) {
-            System.out.println("⚠️ IOException in string test: " + e.getMessage());
+        String response = MoonPhases.getMoonPhasesAsString();
+
+        if (response != null) {
+            assertFalse(response.isEmpty(), "String response should not be empty if not null");
+            System.out.println("✅ String conversion test successful");
+        } else {
+            System.out.println("⚠️ String response is null (may be expected)");
         }
     }
     
