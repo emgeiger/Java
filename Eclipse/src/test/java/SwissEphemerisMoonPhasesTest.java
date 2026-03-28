@@ -10,6 +10,7 @@ import java.util.Calendar;
  */
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @DisplayName("Swiss Ephemeris Moon Phases Tests")
+@Tag("system")
 public class SwissEphemerisMoonPhasesTest
 {
     @Test

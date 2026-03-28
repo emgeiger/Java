@@ -10,8 +10,6 @@ config.properties
 
 # Gradle
 /.gradle/
-/gradlew
-/gradlew.bat
 
 # Log files
 *.log

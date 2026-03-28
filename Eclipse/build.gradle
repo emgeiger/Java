@@ -8,9 +8,6 @@ repositories {
 }
 
 dependencies {
-    // Swiss Ephemeris for astronomical calculations
-    implementation 'org.swisseph:swisseph:2.10.03-2'
-    
     // Testing dependencies
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
     testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.9.2'
@@ -22,8 +19,8 @@ dependencies {
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_11
-    targetCompatibility = JavaVersion.VERSION_11
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
 }
 
 application {
@@ -34,13 +31,14 @@ sourceSets {
     main {
         java {
             srcDirs = ['src']
+            exclude 'test/**'
         }
     }
-}
-
-// Custom task to compile to the bin directory (matching VS Code settings)
-compileJava {
-    destinationDirectory = file('bin')
+    test {
+        java {
+            srcDirs = ['src/test/java']
+        }
+    }
 }
 
 // Task to run the application
@@ -49,11 +47,37 @@ task runEclipse(type: JavaExec) {
     mainClass = 'EclipseSlider'
 }
 
-// Configure test task
+// Configure test task (runs all tests)
 test {
     useJUnitPlatform()
     testLogging {
         events "passed", "skipped", "failed"
         exceptionFormat "full"
     }
+}
+
+// Task to run only unit tests (tagged with @Tag("unit"))
+task unitTest(type: Test) {
+    useJUnitPlatform {
+        includeTags 'unit'
+    }
+    testLogging {
+        events "passed", "skipped", "failed"
+        exceptionFormat "full"
+    }
+    description = 'Runs unit tests tagged with @Tag("unit")'
+    group = 'verification'
+}
+
+// Task to run only system tests (tagged with @Tag("system"))
+task systemTest(type: Test) {
+    useJUnitPlatform {
+        includeTags 'system'
+    }
+    testLogging {
+        events "passed", "skipped", "failed"
+        exceptionFormat "full"
+    }
+    description = 'Runs system tests tagged with @Tag("system")'
+    group = 'verification'
 }
