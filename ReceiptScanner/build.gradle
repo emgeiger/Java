@@ -5,7 +5,6 @@ buildscript {
     repositories {
         google()
         mavenCentral()
-        // Corporate network support
         maven {
             url "https://repo1.maven.org/maven2/"
         }
@@ -22,7 +21,6 @@ allprojects {
     repositories {
         google()
         mavenCentral()
-        // Corporate network support
         maven {
             url "https://repo1.maven.org/maven2/"
         }

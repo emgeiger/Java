@@ -56,7 +56,7 @@
 
 ### 🔧 Build Issues Encountered
 
-The unit tests are ready but currently experiencing Windows-specific file lock issues with the Android build system. This is a common issue in corporate environments with OneDrive sync.
+The unit tests are ready but currently experiencing Windows-specific file lock issues with the Android build system. This is a common issue in synced folders with OneDrive.
 
 ## How to Run Tests (Troubleshooting Guide)
 
@@ -110,13 +110,13 @@ The unit tests are ready but currently experiencing Windows-specific file lock i
 ### Run Specific Test Class
 
 ```powershell
-./gradlew testDebugUnitTest --tests "com.ovintiv.receiptscanner.data.database.ReceiptTest"
+./gradlew testDebugUnitTest --tests "com.Geiger.receiptscanner.data.database.ReceiptTest"
 ```
 
 ### Run Test Suite
 
 ```powershell
-./gradlew testDebugUnitTest --tests "com.ovintiv.receiptscanner.UnitTestSuite"
+./gradlew testDebugUnitTest --tests "com.Geiger.receiptscanner.UnitTestSuite"
 ```
 
 ### Run Tests with Coverage

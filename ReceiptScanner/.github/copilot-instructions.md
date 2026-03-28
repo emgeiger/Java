@@ -9,7 +9,7 @@ This is a Receipt Scanner Android application built with Kotlin that uses:
 - **Room Database** for local data storage
 - **MVVM Architecture** with LiveData and ViewModels
 - **Material Design 3** components
-- **Gradle** build system with corporate network support
+- **Gradle** build system
 
 ## Development Guidelines
 
@@ -43,11 +43,6 @@ This is a Receipt Scanner Android application built with Kotlin that uses:
 - Create **instrumentation tests** for database operations
 - Test **camera functionality** with mock data when possible
 
-### Corporate Environment
-- The project includes **corporate network support** via gradle.properties
-- Use provided **setup scripts** for SSL/proxy configuration
-- Reference the **CORPORATE-NETWORK-GUIDE.md** for troubleshooting
-
 ### Key Features to Implement
 1. **Receipt Scanning**: Camera capture with real-time preview
 2. **OCR Processing**: Extract merchant name, amount, date from receipts
@@ -61,4 +56,4 @@ When generating code, prioritize:
 - **Performance optimization** for camera and database operations
 - **Security** for sensitive financial data
 - **Accessibility** and inclusive design
-- **Corporate compliance** and data privacy
+- **Data privacy** and compliance

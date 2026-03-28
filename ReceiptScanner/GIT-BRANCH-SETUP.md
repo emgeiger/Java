@@ -25,9 +25,7 @@ git commit -m "feat: Add Receipt Scanner Android app with OCR functionality
 - ML Kit integration for text recognition
 - Room database for local storage
 - Material Design 3 UI
-- Corporate network support with Gradle configuration
 - MVVM architecture with Kotlin coroutines
-- Based on emgeiger/Gradle template for corporate environments"
 ```
 
 ### 3. Push to Remote Repository
@@ -63,7 +61,6 @@ Java/ (monorepo)
 ## Next Steps
 
 1. Test the build: `.\gradlew assembleDebug`
-2. Run the corporate network setup if needed: `.\setup-corporate-network.ps1`
-3. Open in Android Studio for development
-4. Continue developing receipt scanning features
-5. Run tests: `.\gradlew test`
+2. Open in Android Studio for development
+3. Continue developing receipt scanning features
+4. Run tests: `.\gradlew test`

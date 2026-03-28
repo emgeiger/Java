@@ -1,199 +1,90 @@
 # Receipt Scanner Android App
 
-A modern Android application for scanning and managing receipts using camera capture and OCR technology. Built with Kotlin, CameraX, ML Kit, and Room database.
+Receipt Scanner is an Android app for capturing receipts, extracting text with OCR, and storing results locally for tracking and review.
 
-## 🚀 Features
+## Features
 
-- **📱 Camera Integration**: Real-time camera preview with CameraX
-- **🔍 OCR Processing**: Extract text from receipts using ML Kit Text Recognition
-- **💾 Local Storage**: Room database for secure local data storage
-- **📊 Expense Tracking**: Organize receipts by categories and dates
-- **🏢 Corporate Ready**: Pre-configured for corporate network environments
-- **🎨 Material Design 3**: Modern UI following Material Design guidelines
-- **🔒 Privacy Focused**: All data stored locally on device
+- Camera capture with CameraX preview
+- OCR extraction with ML Kit Text Recognition
+- Local persistence with Room
+- Receipt organization by category and date
+- Material Design 3 UI
 
-## 🛠️ Tech Stack
+## Tech Stack
 
-- **Language**: Kotlin
-- **Architecture**: MVVM with LiveData
-- **Camera**: CameraX
-- **OCR**: ML Kit Text Recognition
-- **Database**: Room with SQLite
-- **UI**: Material Design 3 Components
-- **Build System**: Gradle with corporate network support
-- **Async**: Kotlin Coroutines
+- Kotlin
+- MVVM with LiveData and ViewModel
+- CameraX
+- ML Kit Text Recognition
+- Room (SQLite)
+- Kotlin Coroutines
 
-## 📋 Prerequisites
+## Prerequisites
 
-- Android Studio Arctic Fox or later
-- Android SDK 24+ (Android 7.0)
+- Android Studio (Arctic Fox or later)
+- Android SDK 24+
 - Java 17+
-- Camera permission for receipt scanning
 
-## 🚦 Quick Start
+## Quick Start
 
-### 1. Clone and Setup
-
-```bash
-git clone <repository-url>
-cd ReceiptScanner
-```
-
-### 2. Corporate Network Setup (if applicable)
-
-If you're in a corporate environment with SSL/proxy issues:
+1. Clone the repository and open the ReceiptScanner project.
+2. Build the debug app:
 
 ```powershell
-# Run the setup script
-.\setup-corporate-network.ps1
+.\gradlew assembleDebug
 ```
 
-### 3. Build and Run
+3. Install to a connected device or emulator:
 
-```bash
-# Build the project
-.\gradlew assembleDebug
-
-# Install on device/emulator
+```powershell
 .\gradlew installDebug
 ```
 
-## 📁 Project Structure
+## Project Structure
 
-```
+```text
 app/
-├── src/main/java/com/ovintiv/receiptscanner/
-│   ├── data/
-│   │   └── database/           # Room database entities and DAOs
-│   ├── ui/
-│   │   └── scan/              # Camera and OCR functionality
-│   ├── MainActivity.kt        # Main navigation activity
-│   └── ReceiptScannerApplication.kt
-├── src/main/res/
-│   ├── layout/                # XML layout files
-│   ├── values/                # Strings, colors, themes
-│   ├── drawable/              # Icons and graphics
-│   └── menu/                  # Navigation menus
-└── build.gradle               # Module dependencies
+  src/main/java/com/Geiger/receiptscanner/
+    data/
+    ui/
+    MainActivity.kt
+    ReceiptScannerApplication.kt
+  src/main/res/
+    layout/
+    values/
+    drawable/
+    menu/
+  build.gradle
 ```
 
-## 🔧 Configuration
+## Testing
 
-### Corporate Network
+Run unit tests:
 
-The app includes pre-configured settings for corporate environments:
-
-- **gradle.properties**: SSL bypass and proxy settings
-- **setup-corporate-network.ps1**: Automated setup script
-- See `CORPORATE-NETWORK-GUIDE.md` for detailed troubleshooting
-
-### Database Schema
-
-```kotlin
-@Entity(tableName = "receipts")
-data class Receipt(
-    val merchantName: String,
-    val totalAmount: Double,
-    val date: String,
-    val category: String,
-    val imagePath: String,
-    val ocrText: String,
-    // ... additional fields
-)
+```powershell
+.\gradlew testDebugUnitTest
 ```
 
-## 📸 How to Use
+Run instrumentation tests:
 
-1. **Scan Receipt**: Open the app and tap the camera button
-2. **Position Receipt**: Align the receipt within the camera frame
-3. **Capture**: Tap the capture button to take a photo
-4. **OCR Processing**: The app automatically extracts text data
-5. **Review & Save**: Verify the extracted information and save
-
-## 🔍 OCR Features
-
-The app automatically extracts:
-- **Merchant Name**: Business or store name
-- **Total Amount**: Purchase total with currency
-- **Date**: Transaction date
-- **Receipt Text**: Full OCR text for reference
-
-## 🧪 Testing
-
-```bash
-# Run unit tests
-.\gradlew test
-
-# Run instrumentation tests
+```powershell
 .\gradlew connectedAndroidTest
-
-# Generate test coverage report
-.\gradlew jacocoTestReport
 ```
 
-## 🏢 Corporate Environment
+## Privacy and Security
 
-### SSL Certificate Issues
+- Data is stored on-device in the local database.
+- The app requests only required runtime permissions.
 
-If you encounter SSL errors in corporate networks:
+## Troubleshooting
 
-1. Run the provided setup script: `.\setup-corporate-network.ps1`
-2. Configure proxy settings in `gradle.properties`
-3. Import corporate certificates if required
+- Build issues in synced folders: stop running Gradle daemons and run a clean build.
+- Camera issues: verify camera permissions in Android settings.
+- OCR quality issues: improve lighting and framing before capture.
 
-### Proxy Configuration
+## Related Documentation
 
-Edit `gradle.properties` to add your proxy settings:
-
-```properties
-systemProp.http.proxyHost=proxy.company.com
-systemProp.http.proxyPort=8080
-systemProp.https.proxyHost=proxy.company.com
-systemProp.https.proxyPort=8080
-```
-
-## 🔒 Privacy & Security
-
-- **Local Storage**: All data stored locally on device
-- **No Cloud Sync**: No automatic cloud backup
-- **Permissions**: Only camera and storage permissions required
-- **Data Encryption**: Consider implementing encryption for sensitive data
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/new-feature`
-3. Make your changes and test thoroughly
-4. Commit your changes: `git commit -m 'Add new feature'`
-5. Push to the branch: `git push origin feature/new-feature`
-6. Submit a pull request
-
-## 📄 License
-
-This project is part of the Ovintiv Java monorepo. See the main repository license for details.
-
-## 🔗 Related Documentation
-
-- [Android CameraX Documentation](https://developer.android.com/training/camerax)
-- [ML Kit Text Recognition](https://developers.google.com/ml-kit/vision/text-recognition)
-- [Room Database Guide](https://developer.android.com/training/data-storage/room)
-- [Material Design 3](https://m3.material.io/)
-
-## 🆘 Troubleshooting
-
-### Common Issues
-
-1. **Build Fails**: Run `.\setup-corporate-network.ps1` for corporate networks
-2. **Camera Not Working**: Check camera permissions in device settings
-3. **OCR Accuracy**: Ensure good lighting and clear receipt text
-4. **Database Errors**: Clear app data or reinstall the app
-
-### Getting Help
-
-- Check the [Issues](../../issues) section for known problems
-- Review `CORPORATE-NETWORK-GUIDE.md` for network-related issues
-- Contact the development team for additional support
-
----
-
-Built with ❤️ using modern Android development practices.
+- Android CameraX: https://developer.android.com/training/camerax
+- ML Kit Text Recognition: https://developers.google.com/ml-kit/vision/text-recognition
+- Room Database: https://developer.android.com/training/data-storage/room
+- Material Design 3: https://m3.material.io/
