@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <!-- Exclude the Room database from cloud backup to protect privacy -->
+    <exclude domain="database" path="receipt_database" />
+    <exclude domain="database" path="receipt_database-shm" />
+    <exclude domain="database" path="receipt_database-wal" />
+</full-backup-content>

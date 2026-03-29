@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_scan">
+
+    <fragment
+        android:id="@+id/nav_scan"
+        android:name="com.Geiger.receiptscanner.ui.scan.ScanFragment"
+        android:label="@string/title_scan"
+        tools:layout="@layout/fragment_scan" />
+
+    <fragment
+        android:id="@+id/nav_receipts"
+        android:name="com.Geiger.receiptscanner.ui.receipts.ReceiptsFragment"
+        android:label="@string/title_receipts"
+        tools:layout="@layout/fragment_receipts" />
+
+    <fragment
+        android:id="@+id/nav_analytics"
+        android:name="com.Geiger.receiptscanner.ui.analytics.AnalyticsFragment"
+        android:label="@string/title_analytics"
+        tools:layout="@layout/fragment_analytics" />
+
+</navigation>
+
