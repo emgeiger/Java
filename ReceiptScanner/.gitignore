@@ -1,0 +1,22 @@
+docs/archive/
+
+# Gradle build cache
+.gradle/
+
+# Android build outputs
+build/
+app/build/
+
+# IDE files
+.idea/
+*.iml
+
+# Local properties (secrets)
+local.properties
+
+# Signed APKs
+*.apk
+*.aab
+
+# Generated Room schemas
+app/schemas/
