@@ -47,8 +47,7 @@ public class BIOS extends JFrame implements ActionListener
     public void createContents()
     {
 //        JButton run = new JButton()
-//        JFileChooser jFileChooser = new JFileChooser("\\\\internal-host\\drivers$\\Script Files\\Drivers");
-//        File file = new File("\\\\internal-host\\drivers$\\Script Files\\Drivers");
+
 //        JFileChooser fileChooser = new JFileChooser(file);
         JPanel jPanel = new JPanel();
         JSplitPane jSplitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT);
@@ -133,22 +132,12 @@ catch(IOException ioe)
 			ProcessBuilder biosProcessBuilder;
 			if(ae.getSource() == start)
 			{
-				if(drivers.isSelected())
-				{
-					ProcessBuilder processBuilder = new ProcessBuilder();
-					processBuilder.command("\\\\internal-host\\drivers$\\Script Files\\Drivers\\AutoDrivers-2.exe");
-					processBuilder.start();
-					Process process = new ProcessBuilder("\\\\internal-host\\drivers$\\Script Files\\Drivers\\AutoDrivers-2.exe").start();
-				}
-				else if (bios.isSelected())
-				{
-                    biosProcess = new ProcessBuilder("\\\\internal-host\\drivers$\\Script Files\\Drivers\\bBIOS_update.bat").start();
-				}
-				else if (bios.isSelected() && drivers.isSelected())
-				{
-					Process process = new ProcessBuilder("\\\\internal-host\\drivers$\\Script Files\\Drivers\\AutoDrivers-2.exe").start();
-					biosProcess = new ProcessBuilder("\\\\internal-host\\drivers$\\Script Files\\Drivers\\BIOS_update.bat").start();
-				}
+//				if(drivers.isSelected())
+
+//				else if (bios.isSelected())
+
+//				else if (bios.isSelected() && drivers.isSelected())
+
 			}
 		}
 		catch(IOException ioe)
