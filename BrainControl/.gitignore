@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 # Build directories
 build/
 dist/
@@ -35,6 +34,7 @@ Thumbs.db
 
 # Java specific
 hs_err_pid*
-=======
 .code-workspace
->>>>>>> Stashed changes
+
+# Copilot instructions (may contain sensitive information)
+.github/copilot-instructions.md
