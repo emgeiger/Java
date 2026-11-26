@@ -4,5 +4,68 @@
 *ctxt
 *html
 
-
 .fake
+
+# ==================================================
+# BUILD OUTPUTS
+# ==================================================
+
+# Gradle
+**/.gradle/
+**/.gradle-cache/
+**/build/
+**/gradle-8.*/
+**/gradle-*.zip
+
+# Maven
+**/target/
+**/.mvn/
+
+# Compiled output folders
+**/bin/
+**/out/
+
+# Android
+**/local.properties
+**/*.apk
+**/*.ap_
+**/*.dex
+**/.externalNativeBuild/
+**/.cxx/
+
+# ==================================================
+# VENDORED THIRD-PARTY LIBRARIES
+# (pull these in as build dependencies instead)
+# ==================================================
+BrainControl/jfreechart/
+BrainControl/*.jar
+
+# ==================================================
+# IDE FILES
+# ==================================================
+**/.idea/
+**/*.iml
+**/*.iws
+**/*.ipr
+**/.settings/
+**/.metadata/
+
+# ==================================================
+# SECRETS
+# ==================================================
+.env
+.env.*
+**/*.p12
+**/*.jks
+**/*.keystore
+
+# ==================================================
+# LOGS AND OS FILES
+# ==================================================
+**/*.log
+**/*.tmp
+**/*.swp
+Thumbs.db
+Desktop.ini
+.DS_Store
+*~
